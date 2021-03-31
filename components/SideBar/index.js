@@ -32,13 +32,13 @@ export default function SideBar({props}) {
           <ListItem className={classes.SidebarLogo}>
           </ListItem>
           {SideBarData.map((item, index) => (
-              <Link
+              <a
                 className={classes.drawerItem}
                 activeStyle={{
                     fontWeight: "bolder",
                     color: "#00465D"
                   }} 
-                  to={item.path}>
+                  href={item.path}>
               <Slide in={true} direction="right" timeout={300 * (index + 1)} >
                 <ListItem button>
                     <ListItemIcon className={classes.icon}>
@@ -49,7 +49,7 @@ export default function SideBar({props}) {
                     </ListItemText>
                 </ListItem>
               </Slide>
-              </Link>
+              </a>
           ))}
         </List>
       </Drawer>

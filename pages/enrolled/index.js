@@ -1,15 +1,15 @@
 import React from "react";
-import API_BASE_URL from "../constants";
+import API_BASE_URL from "../../constants";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
     Typography, Button, Container, Fade,
-    Backdrop, CircularProgress
+    Backdrop, CircularProgress, Card, CardContent
 } from "@material-ui/core";
 import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from "../components/navBar";
-import SideBar from "../components/SideBar";
+import NavBar from "../../components/navBar";
+import SideBar from "../../components/SideBar";
 
 
 const useStyles = makeStyles((theme) =>
@@ -47,34 +47,27 @@ export default function Dashboard (props) {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
     const [userData, setUserData] = useState({});
-    const links = [{
-        "label": "Attendance",
-    }];
+    const [classrooms, setClassrooms] = useState([]);
 
-    function getDashboardDetails(){
-        axios.post(API_BASE_URL + "/get_user_dashboard/", {},
+    function getUserEnrolled(){
+        axios.post(API_BASE_URL + "/get_user_enrolled/", {},
             {
                 headers: {
                     "token": localStorage.getItem("token"),
                     "Access-Control-Allow-Origin": "*",
                 }
             }).then((response) => {
-                //console.log(response)
-                if (response.data.success != true){
-                    localStorage.clear();
-                    router.push("/auth/sign_in");
-                } else {
-                    setUserData(response.data.data)
-                
-                    localStorage.setItem("first_name", userData.first_name);
-                    localStorage.setItem("last_name", userData.last_name);
-                    localStorage.setItem("username", userData.username);
-                    localStorage.setItem("email", userData.email);
+                console.log(response)
+                if (response.data.success === true){
+                    console.log(response.data.data);
+                    if (response.data.data !== []){
+                        setClassrooms(response.data.data);
+                        setLoading(false)
+                    }
                 }
             }).catch(function(error){
                 console.log(error.message);
             });
-    setLoading(false);
     }
     
     useEffect(() => {
@@ -82,7 +75,7 @@ export default function Dashboard (props) {
             router.push("/auth/sign_in")
         } else {
             if(loading){
-                getDashboardDetails();
+                getUserEnrolled();
             }
         }
     }, [props]);
@@ -101,9 +94,27 @@ export default function Dashboard (props) {
                     <main className={classes.content}>
                         <Container className={classes.content}>
                             <div>
-                                <Typography variant="h5">
-                                    Hi {userData.first_name}!
+                                <Typography variant="h4" component="h4">
+                                    Enrolled Classrooms
                                 </Typography>
+                                {
+                                    classrooms.map((item, index) => (
+                                        <div>
+                                        <Button>
+                                            <Card className={classes.root} variant="outlined">
+                                            <CardContent>
+                                                <Typography variant="h5" component="h2" color="textSecondary" gutterBottom>
+                                                    {item.name}
+                                                </Typography>
+                                                <Typography variant="body2" component="h5">
+                                                    Teacher: {item.teacher.name}
+                                                </Typography>
+                                            </CardContent>
+                                            </Card>
+                                        </Button>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </Container>
                     </main>
