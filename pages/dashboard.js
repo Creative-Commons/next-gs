@@ -46,7 +46,7 @@ export default function Dashboard (props) {
         "label": "Attendance",
     }];
 
-    async function getDashboardDetails(){
+    function getDashboardDetails(){
         axios.post(API_BASE_URL + "/get_user_dashboard/", {},
             {
                 headers: {
@@ -65,9 +65,13 @@ export default function Dashboard (props) {
                     localStorage.setItem("last_name", userData.last_name);
                     localStorage.setItem("username", userData.username);
                     localStorage.setItem("email", userData.email);
+                    
+                    setLoading(false);
                 }
             }).catch(function(error){
                 console.log(error.message);
+                localStorage.clear();
+                router.push("/auth/sign_in");
             });
         
     }
@@ -78,7 +82,6 @@ export default function Dashboard (props) {
         } else {
             if(loading){
                 getDashboardDetails();
-                setLoading(false);
             }
         }
     }, [props]);
