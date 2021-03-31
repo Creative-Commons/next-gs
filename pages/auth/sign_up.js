@@ -20,7 +20,7 @@ import NavBar from "../../components/navBar";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-      marginTop: theme.spacing(8),
+      marginTop: theme.spacing(15),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 6,
       boxShadow: theme.shadows[5],
       fontSize: "larger",
+      backgroundColor: "#00465D"
     },
     loading: {
       display: 'flex',

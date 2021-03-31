@@ -8,12 +8,14 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from "../components/navBar"
+import NavBar from "../components/navBar";
+import SideBar from "../components/SideBar";
+
 
 const useStyles = makeStyles((theme) =>
   ({
     root: {
-      flexGrow: 1,
+        display: 'flex',
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -26,7 +28,10 @@ const useStyles = makeStyles((theme) =>
         color: '#fff',
     },
     content: {
-        marginTop: 20,
+        flexGrow: 1,
+        marginTop: 20, 
+        marginLeft: 110,
+        padding: theme.spacing(3),
     },
     profile: {
         alignItems: "center",
@@ -73,7 +78,6 @@ export default function Dashboard (props) {
                 localStorage.clear();
                 router.push("/auth/sign_in");
             });
-        
     }
     
     useEffect(() => {
@@ -93,18 +97,19 @@ export default function Dashboard (props) {
                 <CircularProgress color="inherit" />
             </Backdrop>
         ) : (
-            <Fade in out timeout={1000} >
+            <Fade in={true} timeout={500}>
                 <div>
+                    <SideBar props={props} />
                     <NavBar title="Dashboard" links={links} userData={userData} />
-                    <div>
+                    <main className={classes.content}>
                         <Container className={classes.content}>
                             <div>
                                 <Typography variant="h5">
-                                    Welcome back {userData.first_name}!
+                                    Hi {userData.first_name}!
                                 </Typography>
                             </div>
                         </Container>
-                    </div>
+                    </main>
                 </div>
             </Fade>
         )

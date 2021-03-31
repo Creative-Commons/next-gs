@@ -22,7 +22,7 @@ import NavBar from "../../components/navBar";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-      marginTop: theme.spacing(8),
+      marginTop: theme.spacing(12),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
+      backgroundColor: "#00465D",
+      
     },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
@@ -116,8 +118,8 @@ export default function SignIn (props) {
                 </Backdrop>
             </div>
         ) : (
-            <Fade in out>
-                <>
+            <Fade in={true} timeout={500}>
+                <div>
                     <NavBar title="Sign In" links={links} />
                     <Container component="main" maxWidth="xs">
                         <title>Sign In | GS-Suite</title>
@@ -182,7 +184,7 @@ export default function SignIn (props) {
                                 </Grid>
                         </div>
                     </Container>
-                </>
+                </div>
             </Fade>
         )
     )

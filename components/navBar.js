@@ -15,10 +15,13 @@ import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 
 
+const drawerWidth = 230;
+
 const useStyles = makeStyles((theme) =>
   ({
     root: {
       flexGrow: 1,
+      left: 300
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -29,11 +32,15 @@ const useStyles = makeStyles((theme) =>
     content: {
         marginTop: 20,
     },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+      backgroundColor: "#1e1e1e",
+    },
   })
 );
 
 
-const NavBar = ({title, links, userData}) => {
+const NavBar = ({title, userData}) => {
     const classes = useStyles()
     const router = useRouter()
     
@@ -90,23 +97,14 @@ const NavBar = ({title, links, userData}) => {
     return (
         
         <div className={classes.root}>               
-            <AppBar position="static">
+            <AppBar position="fixed"
+                className={
+                    classes.appBar
+                }>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         {title}
                     </Typography>
-                    {
-                        links ? (
-                            links.map((item) => (
-                                <Button className={classes.menuButton}
-                                    color="inherit" href={item.link}>
-                                        {item.label}
-                                </Button>
-                            ))
-                        ) : (
-                            <></>
-                        )
-                    }
                     {
                         userData ? (
                             <>
