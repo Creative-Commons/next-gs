@@ -10,6 +10,7 @@ import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from "../../components/navBar";
 import SideBar from "../../components/SideBar";
+import Link from "next/link";
 
 
 const useStyles = makeStyles((theme) =>
@@ -42,7 +43,8 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-export default function Dashboard (props) {
+
+export default function Enrolled (props) {
     const router = useRouter();
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
@@ -100,18 +102,20 @@ export default function Dashboard (props) {
                                 {
                                     classrooms.map((item, index) => (
                                         <div>
-                                        <Button>
-                                            <Card className={classes.root} variant="outlined">
-                                            <CardContent>
-                                                <Typography variant="h5" component="h2" color="textSecondary" gutterBottom>
-                                                    {item.name}
-                                                </Typography>
-                                                <Typography variant="body2" component="h5">
-                                                    Teacher: {item.teacher.name}
-                                                </Typography>
-                                            </CardContent>
-                                            </Card>
-                                        </Button>
+                                            <Link href={"/classroom/" + item.uid}>
+                                                <Button>
+                                                <Card className={classes.root} variant="outlined">
+                                                <CardContent>
+                                                    <Typography variant="title" component="h2" color="primary" gutterBottom>
+                                                        {item.name}
+                                                    </Typography>
+                                                    <Typography variant="body">
+                                                        Teacher: {item.teacher.name}
+                                                    </Typography>
+                                                </CardContent>
+                                                </Card>
+                                                </Button>
+                                            </Link>
                                         </div>
                                     ))
                                 }

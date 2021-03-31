@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 
-const NavBar = ({title, userData}) => {
+const NavBar = ({title}) => {
     const classes = useStyles()
     const router = useRouter()
     
@@ -105,10 +105,7 @@ const NavBar = ({title, userData}) => {
                     <Typography variant="h6" className={classes.title}>
                         {title}
                     </Typography>
-                    {
-                        userData ? (
-                            <>
-                            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                                 {({ TransitionProps, placement }) => (
                                     <Grow
                                     {...TransitionProps}
@@ -119,10 +116,10 @@ const NavBar = ({title, userData}) => {
                                             <Card>
                                             <CardContent>
                                                 <Typography variant="h5" component="h2">
-                                                    {userData.first_name} {userData.last_name}
+                                                    {localStorage.getItem("first_name")} {localStorage.getItem("last_name")}
                                                 </Typography>
                                                 <Typography className={classes.title} color="textSecondary">
-                                                {userData.username}
+                                                    {localStorage.getItem("username")}
                                                 </Typography>
                                             </CardContent>
                                             <CardActions>
@@ -145,11 +142,7 @@ const NavBar = ({title, userData}) => {
                                     aria-haspopup="true"
                                     onClick={handleToggle} />
                             </IconButton>
-                            </>
-                        ) : (
-                            <></>
-                        )
-                    }
+                            
                 </Toolbar>
             </AppBar>
         </div>

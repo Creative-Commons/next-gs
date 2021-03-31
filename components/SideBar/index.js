@@ -32,7 +32,7 @@ export default function SideBar({props}) {
           <ListItem className={classes.SidebarLogo}>
           </ListItem>
           {SideBarData.map((item, index) => (
-              <a
+              <Link
                 className={classes.drawerItem}
                 activeStyle={{
                     fontWeight: "bolder",
@@ -49,7 +49,7 @@ export default function SideBar({props}) {
                     </ListItemText>
                 </ListItem>
               </Slide>
-              </a>
+              </Link>
           ))}
         </List>
       </Drawer>
