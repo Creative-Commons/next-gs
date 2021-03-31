@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       color: "#f9f9f9",
     },
     icon: {
-      color: "#f9f9f9" ,
+      color: "#f9f9f9",
     },
     drawerText: {
       color: "#f9f9f9",

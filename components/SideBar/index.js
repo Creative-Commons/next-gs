@@ -36,7 +36,7 @@ export default function SideBar({props}) {
                 className={classes.drawerItem}
                 activeStyle={{
                     fontWeight: "bolder",
-                    color: theme.palette.secondary.main
+                    color: "#00465D"
                   }} 
                   to={item.path}>
               <Slide in={true} direction="right" timeout={300 * (index + 1)} >
