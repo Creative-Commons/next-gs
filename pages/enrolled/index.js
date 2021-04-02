@@ -3,8 +3,10 @@ import API_BASE_URL from "../../constants";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
-    Typography, Button, Container, Fade,
-    Backdrop, CircularProgress, Card, CardContent
+    Typography, Button, Container, Fade, Divider,
+    Backdrop, CircularProgress, Card, CardContent,
+    Dialog, DialogActions, DialogContent, DialogTitle,
+    DialogContentText, TextField
 } from "@material-ui/core";
 import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
@@ -50,34 +52,78 @@ export default function Enrolled (props) {
     const [loading, setLoading] = useState(true);
     const [userData, setUserData] = useState({});
     const [classrooms, setClassrooms] = useState([]);
+    const [classroomMessage, setClassroomMessage] = useState("");
+    const [open, setOpen] = useState(false);
+    const [tokenValue, setTokenValue] = useState(undefined);
 
     function getUserEnrolled(){
         axios.post(API_BASE_URL + "/get_user_enrolled/", {},
-            {
-                headers: {
-                    "token": localStorage.getItem("token"),
-                    "Access-Control-Allow-Origin": "*",
+        {
+            headers: {
+                "token": localStorage.getItem("token"),
+                "Access-Control-Allow-Origin": "*",
+            }
+        }).then((response) => {
+            console.log(response)
+            if (response.data.success === true){
+                if (response.data.data != undefined){
+                    setClassrooms(response.data.data);
+                    setLoading(false);
+                } else {
+                    setClassroomMessage(response.data.message);
+                    setLoading(false);
                 }
-            }).then((response) => {
-                console.log(response)
-                if (response.data.success === true){
-                    console.log(response.data.data);
-                    if (response.data.data !== []){
-                        setClassrooms(response.data.data);
-                        setLoading(false)
-                    }
-                }
-            }).catch(function(error){
-                console.log(error.message);
-            });
+            }
+        }).catch(function(error){
+            console.log(error.message);
+        });
     }
+
+    function enrollClassroom(){
+        setLoading(true);
+        axios.post(API_BASE_URL + "/enroll/", {
+            "entry_code": tokenValue
+        },
+        {
+            headers: {
+                "token": localStorage.getItem("token"),
+                "Access-Control-Allow-Origin": "*",
+            }
+        }).then((response) => {
+            console.log(response);
+            if (response.data.success === true){
+                
+            } else {
+
+            }
+        }).catch(function(error){
+            console.log(error.message);
+        });
+        handleClose();
+        getUserEnrolled();
+        setLoading(false);
+    }
+    
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     
     useEffect(() => {
         if (!localStorage.getItem('token')) {
+
             router.push("/auth/sign_in")
         } else {
             if(loading){
-                getUserEnrolled();
+                setClassrooms([]);
+                setClassroomMessage("");
+                setTimeout(
+                    getUserEnrolled(),
+                    3000
+                )
             }
         }
     }, [props]);
@@ -96,9 +142,22 @@ export default function Enrolled (props) {
                     <main className={classes.content}>
                         <Container className={classes.content}>
                             <div>
-                                <Typography variant="h4" component="h4">
-                                    Enrolled Classrooms
+                                <Container dis>
+                                    <Typography variant="h4" component="h4">
+                                        Enrolled Classrooms
+                                    </Typography>
+                                </Container>
+                                <Divider />
+
+                                <Typography variant="body" color="primary">
+                                    { classroomMessage }
                                 </Typography>
+                                <Container>
+                                    <Button onClick={handleClickOpen} variant="outlined">
+                                        Enroll
+                                    </Button>
+
+                                </Container>
                                 {
                                     classrooms.map((item, index) => (
                                         <div>
@@ -121,6 +180,32 @@ export default function Enrolled (props) {
                                 }
                             </div>
                         </Container>
+                        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                            <DialogTitle id="form-dialog-title">Classroom Enrollment</DialogTitle>
+                            <DialogContent>
+                            <DialogContentText>
+                                To enroll yourself into a classroom, enter the classroom's entry token.
+                            </DialogContentText>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="token"
+                                label="Entry Token"
+                                type="text"
+                                required
+                                onChange={e => setTokenValue(e.target.value)}
+                                fullWidth
+                            />
+                            </DialogContent>
+                            <DialogActions>
+                            <Button onClick={handleClose} color="primary">
+                                Cancel
+                            </Button>
+                            <Button onClick={enrollClassroom} color="primary">
+                                Enroll
+                            </Button>
+                            </DialogActions>
+                        </Dialog>
                     </main>
                 </div>
             </Fade>

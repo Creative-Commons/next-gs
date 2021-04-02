@@ -83,7 +83,10 @@ export default function Dashboard (props) {
             router.push("/auth/sign_in")
         } else {
             if(loading){
-                getDashboardDetails();
+                setTimeout(
+                    getDashboardDetails(),
+                    3000
+                )
             }
         }
     }, [props]);
