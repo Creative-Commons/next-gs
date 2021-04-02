@@ -1,6 +1,6 @@
 
 import React from "react";
-import API_BASE_URL from "../constants";
+import API_BASE_URL from "../../constants";
 import { useRouter } from "next/router";
 import {
     Typography, Button, Link,
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 
-const NavBar = ({title}) => {
+const NavBar = ({userIn}) => {
     const classes = useStyles()
     const router = useRouter()
     
@@ -103,9 +103,12 @@ const NavBar = ({title}) => {
                 }>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        {title}
+                        GS-Suite
                     </Typography>
-                        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                    {
+                        userIn ? (
+                            <>
+                            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                                 {({ TransitionProps, placement }) => (
                                     <Grow
                                     {...TransitionProps}
@@ -142,7 +145,9 @@ const NavBar = ({title}) => {
                                     aria-haspopup="true"
                                     onClick={handleToggle} />
                             </IconButton>
-                            
+                        </>
+                        ) : (<></>)
+                    }              
                 </Toolbar>
             </AppBar>
         </div>

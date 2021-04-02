@@ -1,5 +1,5 @@
 import React from "react";
-import API_BASE_URL from "../constants";
+import API_BASE_URL from "../../constants";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
@@ -8,8 +8,9 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from "../components/navBar";
-import SideBar from "../components/SideBar";
+import NavBar from "../../components/navBar";
+import SideBar from "../../components/SideBar";
+import validateToken from "../../components/apis/validateToken"
 
 
 const useStyles = makeStyles((theme) =>
@@ -82,6 +83,11 @@ export default function Dashboard (props) {
         if (!localStorage.getItem('token')) {
             router.push("/auth/sign_in")
         } else {
+            //// validate token
+            if(!validateToken(localStorage.getItem("token"))){
+                localStorage.clear();
+                router.push("/auth/sign_in");
+            }
             if(loading){
                 setTimeout(
                     getDashboardDetails(),
@@ -101,7 +107,7 @@ export default function Dashboard (props) {
             <Fade in={true} timeout={500}>
                 <div>
                     <SideBar props={props} />
-                    <NavBar title="Dashboard" userData={userData} />
+                    <NavBar userIn={true}/>
                     <main className={classes.content}>
                         <Container className={classes.content}>
                             <div>

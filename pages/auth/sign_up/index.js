@@ -9,14 +9,14 @@ import {
   CircularProgress, Backdrop
  } from '@material-ui/core';
 import axios from 'axios';
-import API_BASE_URL from "../../constants";
+import API_BASE_URL from "../../../constants";
 import { makeStyles } from '@material-ui/core/styles';
-import NameValidator from "../../components/field_validators/nameValidator";
-import UsernameValidator from "../../components/field_validators/usernameValidator";
-import EmailValidator from "../../components/field_validators/emailValidator";
-import PasswordValidator from "../../components/field_validators/passwordValidator";
+import NameValidator from "../../../components/field_validators/nameValidator";
+import UsernameValidator from "../../../components/field_validators/usernameValidator";
+import EmailValidator from "../../../components/field_validators/emailValidator";
+import PasswordValidator from "../../../components/field_validators/passwordValidator";
 import { useRouter } from "next/router";
-import NavBar from "../../components/navBar";
+import NavBar from "../../../components/navBar";
 
 const useStyles = makeStyles((theme) => ({
     paper: {

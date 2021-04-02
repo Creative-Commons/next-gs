@@ -11,13 +11,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import API_BASE_URL from "../../constants";
+import API_BASE_URL from "../../../constants";
 import { useRouter } from "next/router";
-import theme from "../../styles/theme";
-import UsernameValidator from "../../components/field_validators/usernameValidator";
-import PasswordValidator from "../../components/field_validators/passwordValidator";
+import theme from "../../../styles/theme";
+import UsernameValidator from "../../../components/field_validators/usernameValidator";
+import PasswordValidator from "../../../components/field_validators/passwordValidator";
 import Fade from "@material-ui/core/Fade";
-import NavBar from "../../components/navBar";
+import NavBar from "../../../components/navBar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -120,7 +120,7 @@ export default function SignIn (props) {
         ) : (
             <Fade in={true} timeout={500}>
                 <div>
-                    <NavBar title="Sign In" links={links} />
+                    <NavBar userIn={false}/>
                     <Container component="main" maxWidth="xs">
                         <title>Sign In | GS-Suite</title>
                         <CssBaseline />

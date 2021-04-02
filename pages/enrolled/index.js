@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import NavBar from "../../components/navBar";
 import SideBar from "../../components/SideBar";
 import Link from "next/link";
+import validateToken from "../../components/apis/validateToken";
 
 
 const useStyles = makeStyles((theme) =>
@@ -114,9 +115,12 @@ export default function Enrolled (props) {
     
     useEffect(() => {
         if (!localStorage.getItem('token')) {
-
             router.push("/auth/sign_in")
         } else {
+            if(!validateToken(localStorage.getItem("token"))){
+                localStorage.clear();
+                router.push("/auth/sign_in")
+            }
             if(loading){
                 setClassrooms([]);
                 setClassroomMessage("");
@@ -138,7 +142,7 @@ export default function Enrolled (props) {
             <Fade in={true} timeout={500}>
                 <div>
                     <SideBar props={props} />
-                    <NavBar title="Dashboard" userData={userData} />
+                    <NavBar userIn={true} />
                     <main className={classes.content}>
                         <Container className={classes.content}>
                             <div>
