@@ -33,6 +33,9 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <div className={styles.container}>
+        <head>
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+        </head>
         <div className={classes.root}>
           <LinearProgress />
         </div>

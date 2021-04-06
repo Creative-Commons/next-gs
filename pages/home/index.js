@@ -1,82 +1,109 @@
-import React from 'react';
 import {
-    CssBaseline, Container, Link,
-    Grid, Paper, Typography, Button
-} from '@material-ui/core';
+  Avatar, Button, CssBaseline,
+  TextField, FormControlLabel, Checkbox,
+  Link, Paper, Box, Grid, Typography, Collapse,
+  CircularProgress, Fade, Container, IconButton
+ } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useRouter } from "next/router";
-import Fade from "@material-ui/core/Fade";
+import Tilt from "react-tilt";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Link as Scroll } from 'react-scroll';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import NavBar from "../../components/navBar";
+import teal from "@material-ui/core/colors/teal";
+
+import DownloadApp from "../../components/DownloadApp";
 
 
-const useStyles = makeStyles((theme) => ({
-    paper: {
-        marginTop: theme.spacing(12),
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',  
-        padding: theme.spacing(2),
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-      width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(1),
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-      backgroundColor: "#00465D",
-      
-    },
-    backdrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: '#fff',
-    },
-    title: {
-        padding: 20
-    }
-  }));
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  },
+  main: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  gs_font: {
+    fontFamily: ["Montserrat"]
+  },
+  teal: {
+    color: teal[400]
+  }
+}));
+
+
+export default function Home (props) {
+  const classes = useStyles();
+  const [checked, setChecked] = useState(false);
   
+  useEffect(() => {
+    setChecked(true);
+  }, []);
 
-export default function SignIn (props) {
-    let router = useRouter()
-    const classes = useStyles();
-   
-    return (
-        <Fade in={true} timeout={500}>
-            <div className={classes.root}>
-                <Container component="main">
-                    <title>Home | GS-Suite</title>
-                    <CssBaseline />
-                    <div className={classes.paper}>
-                    <Grid container direction="column" justify="center" alignItems="space-evenly">
-                        <Grid item xs>
-                            <Grid container direction="row" justify="center" alignItems="baseline">
-                                <Typography className={classes.title}  variant="h2" component="h1">
-                                    Welcome to 
-                                </Typography>
-                                <Typography className={classes.title}  variant="h1" component="h1">
-                                    GS-Suite
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <br />
-                    <Link href="/auth/sign_in">
-                            <Button variant="contained" size="large" color="primary">
-                                Sign In
-                            </Button>
-                        </Link>
-                    <br /> 
-                    <Link href="/auth/sign_up">
-                        <Button variant="contained" size="large" color="primary">
-                            Sign Up
-                        </Button>
-                    </Link>
-                </div>
-                </Container>
-            </div>
-        </Fade>
-    )
+  <title>Home | GS-Suite</title>
+
+  return (
+    <div>
+      <Fade in={true} timeout={400}>
+        <Container>
+          <CssBaseline />
+          <div className={classes.root} id="header">
+
+            <Collapse
+              in={checked}
+              {...(checked ? { timeout: 1400 } : {})}
+              collapsedHeight={100}
+            >
+              <div className={classes.container}>
+                <Grid container spacing={1}>
+                <Grid alignItems="baseline" item>
+                  <Typography className={classes.gs_font, classes.teal} variant="h2">
+                    Welcome to
+                  </Typography>
+                </Grid>
+                <Grid alignItems="baseline" item>
+                  <Typography className={classes.gs_font} variant="h2">
+                    GS-Suite
+                  </Typography>
+                </Grid>
+                <Grid alignItems="baseline" item>
+                  <Typography className={classes.gs_font, classes.teal} variant="h2">
+                    .
+                  </Typography>
+                </Grid>
+                </Grid>
+
+                <Scroll className={classes.main} to="download-app" smooth={true}>
+                  <IconButton>
+                    <ExpandMoreIcon />
+                  </IconButton>
+                </Scroll>
+              </div>
+            </Collapse>
+          </div>
+
+          <DownloadApp />
+
+        </Container>
+      </Fade>
+    </div>
+  );
 }
+
+{/* <Container>
+  <Wrapper>
+    <InnerWrapper options={{ max: 25 }}>
+      <Left>
+        <LeftText />
+      </Left>
+      <TiltWrapper>
+        <Img src="/pic.jpg"></Img>
+      </TiltWrapper>
+    </InnerWrapper>
+  </Wrapper>
+</Container> */}

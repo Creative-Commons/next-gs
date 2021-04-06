@@ -54,12 +54,6 @@ export default function SignIn (props) {
     const [username, setUsername] = useState(undefined);
     const [password, setPassword] = useState(undefined);
     const [errorMessage, setErrorMessage] = useState("");
-    const links = [
-        {
-            "label": "Sign Up",
-            "link": "/auth/sign_up"
-        }
-    ];
 
     function formValidator () {
         //// Validate the fields

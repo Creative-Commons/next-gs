@@ -19,10 +19,6 @@ const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) =>
   ({
-    root: {
-      flexGrow: 1,
-      left: 300
-    },
     menuButton: {
       marginRight: theme.spacing(2),
     },
@@ -96,7 +92,6 @@ const NavBar = ({userIn}) => {
 
     return (
         
-        <div className={classes.root}>               
             <AppBar position="fixed"
                 className={
                     classes.appBar
@@ -150,7 +145,6 @@ const NavBar = ({userIn}) => {
                     }              
                 </Toolbar>
             </AppBar>
-        </div>
     )
 }
 
