@@ -23,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
     },
   },
-  top_root: {
+  land_root: {
+    minHeight: '100vh',
     backgroundImage: "url('/resources/header_bg.png')",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
+    backgroundSize: "80% auto",
     backgroundPosition: "center center",
     background: "#1e1e1e"
   },
@@ -47,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
   },
   scroll_icon_light: {
     color: "#f3f3f3",
-    padding: "5vh",
+    padding: "3vh",
+    marginBottom: "5vh",
   },
   scroll_icon_dark: {
     color: "#1e1e1e",
