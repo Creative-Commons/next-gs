@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
   teal: {
     color: teal[400]
   },
+  darkBackground: {
+    background: "#1e1e1e"
+  },
   scroll_icon_light: {
     color: "#f3f3f3",
     padding: "3vh",
@@ -57,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "3vh",
     marginBottom: "5vh",
   },
+  table: {
+    border: "2px solid black",
+    borderBottom: "2px solid black",
+  }
 }));
 
 
