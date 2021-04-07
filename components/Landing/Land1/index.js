@@ -4,6 +4,7 @@ import {
     Container
 } from "@material-ui/core";
 
+import {TiltWrapper} from "../../Tilting";
 import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 

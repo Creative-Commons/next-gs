@@ -8,6 +8,7 @@ import {
 
 import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
+import { TiltWrapper } from "../../Tilting";
 
 
 export default function Header ({checked, classes}) {
@@ -20,6 +21,7 @@ export default function Header ({checked, classes}) {
             >
                 <>
             <div className={classes.container}>
+            <TiltWrapper options={{ max: 25 }}>
                 <Typography className={classes.gs_font, classes.teal} variant="h2">
                     Welcome to
                 </Typography>                
@@ -38,6 +40,7 @@ export default function Header ({checked, classes}) {
                         </Typography>
                     </Grid>
                 </Grid>
+                </TiltWrapper>            
             </div>
             </>
         </Fade>
