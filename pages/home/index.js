@@ -7,10 +7,13 @@ import {
   CssBaseline, Fade, Container
  } from '@material-ui/core';
 
-import Land1 from "../../components/Landing/Land1";
+import NavBar from "../../components/navBar";
 import Header from "../../components/Landing/Header";
+import Land1 from "../../components/Landing/Land1";
 import Features1 from "../../components/Landing/Features1";
-import DownloadApp from "../../components/Landing/DownloadApp";
+import DownloadApp from "../../components/Landing/Downloads";
+import Support from "../../components/Landing/Support";
+import TheDevs from "../../components/Landing/TheDevs";
 import theme from "../../styles/theme";
 
 
@@ -82,10 +85,13 @@ export default function Home (props) {
       <Fade in={true} timeout={400}>
         <>
           <CssBaseline />
+          <NavBar />
           <Header checked={checked} classes={classes} />
           <Land1 classes={classes} />
           <Features1 classes={classes} />
           <DownloadApp checked={true}  classes={classes}/>
+          <Support classes={classes}/>
+          <TheDevs classes={classes}/>
         </>
       </Fade>
     </div>

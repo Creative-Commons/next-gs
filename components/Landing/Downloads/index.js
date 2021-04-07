@@ -4,7 +4,7 @@ import useWindowPosition from '../../../hook/useWindowPosition';
 import { Container, Grid, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import teal from "@material-ui/core/colors/teal";
 import { Link as Scroll } from 'react-scroll';
-import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
+import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import Link from "next/link";
 import apkData from "./apkData";
 import Count from "../../Count";
@@ -13,7 +13,7 @@ import Count from "../../Count";
 export default function DownloadApp ({checked, classes}) {
   return (
     <>
-    <div className={classes.root} id="download-app">
+    <div className={classes.root} id="downloads">
       <Container>
         <Grid
           container spacing={2}
@@ -71,9 +71,9 @@ export default function DownloadApp ({checked, classes}) {
         }
       </Container>
     </div>
-    <Scroll className={classes.main} to="header" smooth={true}>
+    <Scroll className={classes.main} to="support" smooth={true}>
         <IconButton className={classes.scroll_icon_dark}>
-            <ExpandLessOutlinedIcon />
+            <ExpandMoreOutlinedIcon />
         </IconButton>
     </Scroll>
     </>

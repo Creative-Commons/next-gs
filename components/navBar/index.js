@@ -1,151 +1,65 @@
-
-import React from "react";
-import API_BASE_URL from "../../constants";
-import { useRouter } from "next/router";
-import {
-    Typography, Button, Link,
-    AppBar, Toolbar, Popper, Paper, ClickAwayListener, Grow, 
-    MenuList, Card, CardContent, CardActions
-} from "@material-ui/core";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import PersonIcon from "@material-ui/icons/Person";
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import axios from "axios";
-import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Button, Grid, IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import teal from "@material-ui/core/colors/teal";
+import { Link as Scroll } from 'react-scroll';
+import Link from "next/link";
 
 
-const drawerWidth = 230;
-
-const useStyles = makeStyles((theme) =>
-  ({
-    menuButton: {
-      marginRight: theme.spacing(2),
+const useStyles = makeStyles(() => ({
+    app_bar: {
+        background: "#f3f3f3",
+    },
+    root: {
+      flexGrow: 1,
     },
     title: {
       flexGrow: 1,
     },
-    content: {
-        marginTop: 20,
+    teal: {
+      color: teal[400]
     },
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-      backgroundColor: "#1e1e1e",
+    teal_dark: {
+      color: teal[800]
     },
-  })
-);
+  }));
 
-
-const NavBar = ({userIn}) => {
-    const classes = useStyles()
-    const router = useRouter()
-    
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
-
-    const signOut = (event) => {
-        console.log("sign out");
-        axios.post(API_BASE_URL + "/sign_out/", {},
-        {
-            "headers": {
-                "token": localStorage.getItem("token"),
-                "Access-Control-Allow-Origin": "*"
-            }
-        }).then((response) => {
-            //console.log(response)
-        }).catch(function(error){
-            console.log(error.message);
-        });
-        localStorage.clear();
-        router.push("/auth/sign_in");
-        event.preventDefault();
-    }
-
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
-
-    const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-    }
-
-    setOpen(false);
-    };
-
-    function handleListKeyDown(event) {
-        if (event.key === 'Tab') {
-        event.preventDefault();
-        setOpen(false);
-        }
-    }
-
-    // return focus to the button when we transitioned from !open -> open
-    const prevOpen = React.useRef(open);
-    React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-    anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-    }, [open]);
+export default function NavBar () {
+    const classes = useStyles();
 
     return (
-        
-            <AppBar position="fixed"
-                className={
-                    classes.appBar
-                }>
+        <div>
+            <AppBar position="static" className={classes.app_bar}>
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        GS-Suite
-                    </Typography>
-                    {
-                        userIn ? (
-                            <>
-                            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-                                {({ TransitionProps, placement }) => (
-                                    <Grow
-                                    {...TransitionProps}
-                                    style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                                    >
-                                        <ClickAwayListener onClickAway={handleClose}>
-                                        <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>                            
-                                            <Card>
-                                            <CardContent>
-                                                <Typography variant="h5" component="h2">
-                                                    {localStorage.getItem("first_name")} {localStorage.getItem("last_name")}
-                                                </Typography>
-                                                <Typography className={classes.title} color="textSecondary">
-                                                    {localStorage.getItem("username")}
-                                                </Typography>
-                                            </CardContent>
-                                            <CardActions>
-                                                <Button fullWidth color="secondary" variant="outlined">View Profile</Button>
-                                            </CardActions>
-                                            <CardActions>
-                                                <Button fullWidth onClick={(event) => signOut(event)} color="secondary" variant="outlined">Sign Out</Button>
-                                            </CardActions>
-                                            </Card>
-                                        </MenuList>
-                                        </ClickAwayListener>
-                                    </Grow>
-                                )}
-                            </Popper>
-                            
-                            <IconButton className={classes.menuButton} color="inherit" aria-label="menu">
-                                <AccountCircleIcon 
-                                    ref={anchorRef}
-                                    aria-controls={open ? 'menu-list-grow' : undefined}
-                                    aria-haspopup="true"
-                                    onClick={handleToggle} />
-                            </IconButton>
-                        </>
-                        ) : (<></>)
-                    }              
+                    <Grid container justify="space-evenly" alignItems="center">
+                        <Grid item><Scroll className={classes.teal_dark} to="features1" smooth>
+                            <Button className={classes.teal_dark}>
+                                About
+                            </Button>
+                        </Scroll></Grid>
+                        <Grid item><Scroll className={classes.teal_dark} to="downloads" smooth>
+                        <Button className={classes.teal_dark}>
+                                Downloads
+                            </Button>
+                        </Scroll></Grid>
+                        <Grid item>
+                            <Button className={classes.teal_dark}>
+                                <Link href="#">
+                                    Main Website
+                                </Link>
+                            </Button>
+                        </Grid>
+                        <Grid item><Scroll className={classes.teal_dark} to="support" smooth>
+                            <Button className={classes.teal_dark}>
+                                Support
+                            </Button>
+                        </Scroll></Grid>
+                        <Grid item><Scroll className={classes.teal_dark} to="thedevs" smooth>
+                            <Button className={classes.teal_dark}>
+                                The Team
+                            </Button>
+                        </Scroll></Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
+        </div>
     )
 }
-
-export default NavBar;

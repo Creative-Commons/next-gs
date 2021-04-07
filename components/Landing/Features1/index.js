@@ -43,7 +43,7 @@ export default function Features1 ({classes}) {
         </Grid>
       </Container>
     </div>
-    <Scroll className={classes.main} to="download-app" smooth={true}>
+    <Scroll className={classes.main} to="downloads" smooth={true}>
         <IconButton className={classes.scroll_icon_dark}>
             <ExpandMoreOutlinedIcon />
         </IconButton>
