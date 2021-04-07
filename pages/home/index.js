@@ -66,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
   table: {
     border: "2px solid black",
     borderBottom: "2px solid black",
+  },
+  title: {
+    fontFamily: ["Montserrat"],
+    fontSize: 100,
   }
 }));
 

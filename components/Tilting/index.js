@@ -11,8 +11,6 @@ min-width: 400px;
 `;
 
 export const InnerWrapper = styled.div`
-  max-width: 1000px;
-  height: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -21,8 +19,6 @@ export const InnerWrapper = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
   /* margin: 2rem; */
   background-color: rgba(255, 255, 255, 0.9);
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
