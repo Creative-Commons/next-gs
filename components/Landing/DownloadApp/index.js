@@ -7,9 +7,10 @@ import { Link as Scroll } from 'react-scroll';
 import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
 import Link from "next/link";
 import apkData from "./apkData";
+import Count from "../../Count";
 
 
-export default function DownloadApp ({classes}) {
+export default function DownloadApp ({checked, classes}) {
   return (
     <>
     <div className={classes.root} id="download-app">
@@ -24,12 +25,10 @@ export default function DownloadApp ({classes}) {
               justify="flex-start"
               alignItems="center" xs={12} sm={6}>
             <Grid item>
-              <Typography className={classes.gs_font} variant="h4" >
+              <Typography className={classes.gs_font} variant="h3" >
                 Download the app
               </Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.gs_font, classes.teal} variant="h4">
+              <Typography className={classes.gs_font, classes.teal} variant="h3">
                   here
               </Typography>
             </Grid>
@@ -61,6 +60,15 @@ export default function DownloadApp ({classes}) {
             </Table>
           </Grid>
         </Grid>
+        {
+          checked ? (
+            <div>
+              <Count label="Total Downloads" number="81" duration="2" classes={classes} />
+            </div>
+          ) : (
+            <></>
+          )
+        }
       </Container>
     </div>
     <Scroll className={classes.main} to="header" smooth={true}>

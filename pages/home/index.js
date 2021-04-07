@@ -85,7 +85,7 @@ export default function Home (props) {
           <Header checked={checked} classes={classes} />
           <Land1 classes={classes} />
           <Features1 classes={classes} />
-          <DownloadApp  classes={classes}/>
+          <DownloadApp checked={true}  classes={classes}/>
         </>
       </Fade>
     </div>
