@@ -1,5 +1,7 @@
+import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
 import { makeStyles } from '@material-ui/core/styles';
 import teal from "@material-ui/core/colors/teal";
+import Fab from '@material-ui/core/Fab';
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Tilt from "react-tilt";
@@ -14,6 +16,7 @@ import Features1 from "../../components/Landing/Features1";
 import DownloadApp from "../../components/Landing/Downloads";
 import Support from "../../components/Landing/Support";
 import TheDevs from "../../components/Landing/TheDevs";
+import ScrollToTop from "../../components/ScrollToTop";
 import theme from "../../styles/theme";
 
 
@@ -50,6 +53,15 @@ const useStyles = makeStyles((theme) => ({
   teal: {
     color: teal[400]
   },
+  bg_teal: {
+    padding: "4vh",
+    backgroundColor: "#1e1e1e",
+    color: "#fff",
+    '&:hover': {
+      boxShadow: 'none',
+      backgroundColor: teal[400]
+    },
+  },
   darkBackground: {
     background: "#1e1e1e"
   },
@@ -69,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontFamily: ["Montserrat"],
-    fontSize: 100,
+    fontSize: 120,
   }
 }));
 
@@ -96,6 +108,11 @@ export default function Home (props) {
           <DownloadApp checked={true}  classes={classes}/>
           <Support classes={classes}/>
           <TheDevs classes={classes}/>
+          <ScrollToTop {...props}>
+            <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">
+              <ExpandLessOutlinedIcon />
+            </Fab>
+          </ScrollToTop>
         </>
       </Fade>
     </div>

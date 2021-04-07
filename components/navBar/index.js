@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const useStyles = makeStyles(() => ({
     app_bar: {
-        background: "#f3f3f3",
+        background: "#ffffff",
     },
     root: {
       flexGrow: 1,
@@ -28,7 +28,7 @@ export default function NavBar () {
     return (
         <div>
             <AppBar position="static" className={classes.app_bar}>
-                <Toolbar>
+                <Toolbar id="back-to-top-anchor" variant="dense">
                     <Grid container justify="space-evenly" alignItems="center">
                         <Grid item><Scroll className={classes.teal_dark} to="features1" smooth>
                             <Button className={classes.teal_dark}>
