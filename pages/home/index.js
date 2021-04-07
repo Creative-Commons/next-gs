@@ -35,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  container: {
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
   gs_font: {
     fontFamily: ["Montserrat"]
   },
@@ -43,11 +47,12 @@ const useStyles = makeStyles((theme) => ({
   },
   scroll_icon_light: {
     color: "#f3f3f3",
-    padding: "3vh",
+    padding: "5vh",
   },
   scroll_icon_dark: {
     color: "#1e1e1e",
     padding: "3vh",
+    marginBottom: "5vh",
   },
 }));
 
