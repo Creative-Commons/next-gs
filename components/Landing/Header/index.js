@@ -1,7 +1,9 @@
 import {
     Typography, Collapse, Grid,
     IconButton,
-    Fade
+    Fade,
+    Container,
+    Box
 } from "@material-ui/core";
 
 import { Link as Scroll } from 'react-scroll';
@@ -16,6 +18,7 @@ export default function Header ({checked, classes}) {
                 in={checked}
                 {...(checked ? { timeout: 1400 } : {})}
             >
+                <>
             <div className={classes.container}>
                 <Typography className={classes.gs_font, classes.teal} variant="h2">
                     Welcome to
@@ -36,6 +39,7 @@ export default function Header ({checked, classes}) {
                     </Grid>
                 </Grid>
             </div>
+            </>
         </Fade>
     </div>
     <Scroll className={classes.main} to="land-1" smooth={true}>

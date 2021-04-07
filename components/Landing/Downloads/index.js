@@ -4,6 +4,7 @@ import useWindowPosition from '../../../hook/useWindowPosition';
 import { Container, Grid, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import teal from "@material-ui/core/colors/teal";
 import { Link as Scroll } from 'react-scroll';
+import {TiltWrapper} from "../../Tilting"
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import Link from "next/link";
 import apkData from "./apkData";
@@ -19,21 +20,24 @@ export default function DownloadApp ({checked, classes}) {
           container spacing={2}
           direction="row"
           justify="space-evenly"
-          alignItems="center">
+          alignItems="flex-start">
           <Grid container spacing={2}
               direction="row"
-              justify="flex-start"
-              alignItems="center" xs={12} sm={6}>
-            <Grid item>
-              <Typography className={classes.gs_font} variant="h3" >
+              justify="center"
+              alignItems="center" xs={6}>
+              <Grid item>
+              <Typography align="center" className={classes.gs_font} variant="h3" >
                 Download the app
               </Typography>
-              <Typography className={classes.gs_font, classes.teal} variant="h3">
+              </Grid>
+              <Grid item>
+              <Typography align="center" className={classes.gs_font, classes.teal} variant="h3">
                   here
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={10} sm={6}>
+            <TiltWrapper options={{ max: 25 }}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead className={classes.darkBackground}>
                 <TableRow>
@@ -58,6 +62,7 @@ export default function DownloadApp ({checked, classes}) {
                 ))}
               </TableBody>
             </Table>
+            </TiltWrapper>
           </Grid>
         </Grid>
         {

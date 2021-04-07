@@ -4,9 +4,10 @@ import {
     Container
 } from "@material-ui/core";
 
-import Link from "next/link";
-import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
+import {TiltWrapper} from "../../Tilting";
+import { Link as Scroll } from 'react-scroll';
+import Link from "next/link";
 
 
 export default function Features1 ({classes}) {
@@ -25,12 +26,16 @@ export default function Features1 ({classes}) {
                 </Typography>
             </Grid>
             <Grid item xs={6}>
-                <img height="300vh" src="/resources/features_1_1.jpg"/>
+                <TiltWrapper options={{ max: 25 }}>
+                    <img height="300vh" src="/resources/features_1_1.jpg"/>
+                </TiltWrapper>
             </Grid>
         </Grid>
         <Grid container spacing={2} alignItems="center" alignContent="center">
             <Grid item xs={6}>
-                <img height="300vh" src="/resources/features_1_2.jpg"/>                
+                <TiltWrapper options={{ max: 25 }}>
+                    <img height="300vh" src="/resources/features_1_2.jpg"/>
+                </TiltWrapper>
             </Grid>
             <Grid item xs={6}>
                 <Typography className={classes.gs_font, classes.teal} variant="h3" >

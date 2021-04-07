@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
 
@@ -35,8 +35,8 @@ const Count = ({label, number, duration, classes}) => {
   }, [number, duration]);
 
   return (
-    <div>
-        <Grid container alignItems="center" spacing={2}>
+    <Container>
+        <Grid container justify="center" alignItems="center" spacing={2}>
             <Grid item>
                 <Typography variant="h5">
                     {label}:
@@ -48,7 +48,7 @@ const Count = ({label, number, duration, classes}) => {
                 </Typography>
             </Grid>
         </Grid>
-    </div>
+    </Container>
   );
 }
 
