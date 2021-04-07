@@ -7,8 +7,9 @@ import {
   CssBaseline, Fade, Container
  } from '@material-ui/core';
 
-import Top from "../../components/Landing/Land1"
-import Header from "../../components/Landing/Header"
+import Land1 from "../../components/Landing/Land1";
+import Header from "../../components/Landing/Header";
+import Features1 from "../../components/Landing/Features1";
 import DownloadApp from "../../components/Landing/DownloadApp";
 import theme from "../../styles/theme";
 
@@ -75,9 +76,9 @@ export default function Home (props) {
         <>
           <CssBaseline />
           <Header checked={checked} classes={classes} />
-          <Top classes={classes} />
+          <Land1 classes={classes} />
+          <Features1 classes={classes} />
           <DownloadApp  classes={classes}/>
-
         </>
       </Fade>
     </div>
