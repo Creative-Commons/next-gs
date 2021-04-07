@@ -36,7 +36,8 @@ export default function DownloadApp ({checked, classes}) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={10} sm={6}>
+          <TiltWrapper options={{ max: 25 }}>
+          <Grid item xs={12}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead className={classes.darkBackground}>
                 <TableRow>
@@ -62,6 +63,7 @@ export default function DownloadApp ({checked, classes}) {
               </TableBody>
             </Table>
           </Grid>
+          </TiltWrapper>
         </Grid>
         {
           checked ? (

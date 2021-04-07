@@ -21,10 +21,10 @@ export default function Header ({checked, classes}) {
             >
                 <>
             <div className={classes.container}>
-            <TiltWrapper options={{ max: 25 }}>
                 <Typography className={classes.gs_font, classes.teal} variant="h2">
                     Welcome to
                 </Typography>                
+                <TiltWrapper options={{ max: 25 }}>
                 <Typography className={classes.gs_font} variant="h1">
                     GS
                 </Typography>
