@@ -1,27 +1,34 @@
-import {
-  Avatar, Button, CssBaseline,
-  TextField, FormControlLabel, Checkbox,
-  Link, Paper, Box, Grid, Typography, Collapse,
-  CircularProgress, Fade, Container, IconButton
- } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Tilt from "react-tilt";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Link as Scroll } from 'react-scroll';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import NavBar from "../../components/navBar";
 import teal from "@material-ui/core/colors/teal";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Tilt from "react-tilt";
+import {
+  CssBaseline, Fade, Container
+ } from '@material-ui/core';
 
-import DownloadApp from "../../components/DownloadApp";
+import Top from "../../components/Landing/Land1"
+import Header from "../../components/Landing/Header"
+import DownloadApp from "../../components/Landing/DownloadApp";
+import theme from "../../styles/theme";
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
+    minHeight: '90vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+    },
+  },
+  top_root: {
+    backgroundImage: "url('/resources/header_bg.png')",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    backgroundPosition: "center center",
+    background: "#1e1e1e"
   },
   main: {
     display: 'flex',
@@ -33,7 +40,15 @@ const useStyles = makeStyles(() => ({
   },
   teal: {
     color: teal[400]
-  }
+  },
+  scroll_icon_light: {
+    color: "#f3f3f3",
+    padding: "5vh",
+  },
+  scroll_icon_dark: {
+    color: "#1e1e1e",
+    padding: "5vh",
+  },
 }));
 
 
@@ -50,46 +65,13 @@ export default function Home (props) {
   return (
     <div>
       <Fade in={true} timeout={400}>
-        <Container>
+        <>
           <CssBaseline />
-          <div className={classes.root} id="header">
+          <Header checked={checked} classes={classes} />
+          <Top classes={classes} />
+          <DownloadApp  classes={classes}/>
 
-            <Collapse
-              in={checked}
-              {...(checked ? { timeout: 1400 } : {})}
-              collapsedHeight={100}
-            >
-              <div className={classes.container}>
-                <Grid container spacing={1}>
-                <Grid alignItems="baseline" item>
-                  <Typography className={classes.gs_font, classes.teal} variant="h2">
-                    Welcome to
-                  </Typography>
-                </Grid>
-                <Grid alignItems="baseline" item>
-                  <Typography className={classes.gs_font} variant="h2">
-                    GS-Suite
-                  </Typography>
-                </Grid>
-                <Grid alignItems="baseline" item>
-                  <Typography className={classes.gs_font, classes.teal} variant="h2">
-                    .
-                  </Typography>
-                </Grid>
-                </Grid>
-
-                <Scroll className={classes.main} to="download-app" smooth={true}>
-                  <IconButton>
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </Scroll>
-              </div>
-            </Collapse>
-          </div>
-
-          <DownloadApp />
-
-        </Container>
+        </>
       </Fade>
     </div>
   );

@@ -105,7 +105,7 @@ export default function Dashboard (props) {
             </Backdrop>
         ) : (
             <Fade in={true} timeout={500}>
-                <div>
+                <div className={classes.root}>
                     <SideBar props={props} />
                     <NavBar userIn={true}/>
                     <main className={classes.content}>
