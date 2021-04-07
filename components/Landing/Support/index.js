@@ -1,8 +1,9 @@
 import React from 'react';
 import useWindowPosition from '../../../hook/useWindowPosition';
-import { Container, Grid, Typography, IconButton} from '@material-ui/core';
+import { Container, Grid, Typography, IconButton, Card, CardContent} from '@material-ui/core';
 import { Link as Scroll } from 'react-scroll';
-import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
+import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
+import { Button} from '@material-ui/core';
 
 
 export default function Support ({classes}) {
@@ -10,15 +11,33 @@ export default function Support ({classes}) {
     <>
     <div className={classes.root} id="support">
       <Container>
-          <Typography variant="h2">
-              Support
-          </Typography>
+        <Grid container alignItems="center" justify="space-evenly">
+          <Grid container justify="flex-start">
+            <Typography className={classes.gs_font} variant="h2">
+                Support
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Card>
+              <CardContent>
+                <Typography>
+                  Contact
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
       </Container>
     </div>
-    <Scroll className={classes.main} to="thedevs" smooth={true}>
-        <IconButton className={classes.scroll_icon_dark}>
-            <ExpandMoreOutlinedIcon />
-        </IconButton>
+    <Scroll className={classes.main} padding="10" to="header" smooth={true}>
+      <Button
+          className={classes.scroll_icon_dark}
+          endIcon={
+            <ExpandLessOutlinedIcon />
+          }
+        >
+        Back to Top
+      </Button>
     </Scroll>
     </>
   );

@@ -6,7 +6,15 @@ import Link from "next/link";
 
 const useStyles = makeStyles(() => ({
     app_bar: {
-        background: "#ffffff",
+        background: "#1e1e1e",
+    },
+    navButtons: {
+        color: teal[400],
+        fontFamily: ["Montserrat"],
+        '&:hover': {
+            boxShadow: 'none',
+            color: "#f3f3f3",
+        },
     },
     root: {
       flexGrow: 1,
@@ -30,31 +38,31 @@ export default function NavBar () {
             <AppBar position="static" className={classes.app_bar}>
                 <Toolbar id="back-to-top-anchor" variant="dense">
                     <Grid container justify="space-evenly" alignItems="center">
-                        <Grid item><Scroll className={classes.teal_dark} to="features1" smooth>
-                            <Button className={classes.teal_dark}>
+                        <Grid item><Scroll className={classes.navButtons} to="features1" smooth>
+                            <Button className={classes.navButtons}>
                                 About
                             </Button>
                         </Scroll></Grid>
-                        <Grid item><Scroll className={classes.teal_dark} to="downloads" smooth>
-                        <Button className={classes.teal_dark}>
+                        <Grid item><Scroll className={classes.navButtons} to="downloads" smooth>
+                        <Button className={classes.navButtons}>
                                 Downloads
                             </Button>
                         </Scroll></Grid>
                         <Grid item>
-                            <Button className={classes.teal_dark}>
+                            <Button className={classes.navButtons}>
                                 <Link href="#">
                                     Main Website
                                 </Link>
                             </Button>
                         </Grid>
-                        <Grid item><Scroll className={classes.teal_dark} to="support" smooth>
-                            <Button className={classes.teal_dark}>
-                                Support
+                        <Grid item><Scroll className={classes.navButtons} to="thedevs" smooth>
+                            <Button className={classes.navButtons}>
+                                The Team
                             </Button>
                         </Scroll></Grid>
-                        <Grid item><Scroll className={classes.teal_dark} to="thedevs" smooth>
-                            <Button className={classes.teal_dark}>
-                                The Team
+                        <Grid item><Scroll className={classes.navButtons} to="support" smooth>
+                            <Button className={classes.navButtons}>
+                                Support
                             </Button>
                         </Scroll></Grid>
                     </Grid>

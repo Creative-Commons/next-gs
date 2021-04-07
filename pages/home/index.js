@@ -106,8 +106,8 @@ export default function Home (props) {
           <Land1 classes={classes} />
           <Features1 classes={classes} />
           <DownloadApp checked={true}  classes={classes}/>
-          <Support classes={classes}/>
           <TheDevs classes={classes}/>
+          <Support classes={classes}/>
           <ScrollToTop {...props}>
             <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">
               <ExpandLessOutlinedIcon />

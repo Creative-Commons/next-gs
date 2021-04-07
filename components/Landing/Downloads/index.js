@@ -16,59 +16,52 @@ export default function DownloadApp ({checked, classes}) {
     <>
     <div className={classes.root} id="downloads">
       <Container>
-        <Grid
-          container spacing={2}
-          direction="row"
-          justify="space-evenly"
-          alignItems="flex-start">
-          <Grid container spacing={2}
-              direction="row"
-              justify="center"
-              alignItems="center" xs={6}>
-              <Grid item>
-              <Typography align="center" className={classes.gs_font} variant="h3" >
+        <Grid container justify="space-evenly" alignItems="center">
+          <Grid container justify="flex-start" direction="column">
+            <Grid item>
+              <Typography className={classes.gs_font} variant="h2" >
                 Download the app
               </Typography>
               </Grid>
               <Grid item>
-              <Typography align="center" className={classes.gs_font, classes.teal} variant="h3">
-                  here
+              <Typography className={classes.gs_font, classes.teal} variant="h2">
+                  here...
               </Typography>
             </Grid>
           </Grid>
-          <TiltWrapper options={{ max: 25 }}>
-          <Grid item xs={12}>
-            <Table className={classes.table} aria-label="simple table">
-              <TableHead className={classes.darkBackground}>
-                <TableRow>
-                <TableCell className={classes.teal} align="center">Device</TableCell>
-                <TableCell className={classes.teal} align="center">Download Link</TableCell>
-                <TableCell className={classes.teal} align="center">Hash</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {apkData.map((row) => (
-                  <TableRow key={row.name}>
-                    <TableCell align="center">{row.type}</TableCell>
-                    <TableCell>
-                        <Typography className={classes.teal}>
-                          <Link href={row.link}>
-                            {row.link}
-                          </Link>
-                        </Typography>
-                    </TableCell>
-                    <TableCell>{row.hash}</TableCell>
+          <Grid item xs={6}>
+            <TiltWrapper options={{ max: 25 }}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead className={classes.darkBackground}>
+                  <TableRow>
+                  <TableCell className={classes.teal} align="center">Device</TableCell>
+                  <TableCell className={classes.teal} align="center">Download Link</TableCell>
+                  <TableCell className={classes.teal} align="center">Hash</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHead>
+                <TableBody>
+                  {apkData.map((row) => (
+                    <TableRow key={row.name}>
+                      <TableCell align="center">{row.type}</TableCell>
+                      <TableCell>
+                          <Typography className={classes.teal}>
+                            <Link href={row.link}>
+                              {row.link}
+                            </Link>
+                          </Typography>
+                      </TableCell>
+                      <TableCell>{row.hash}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TiltWrapper>
           </Grid>
-          </TiltWrapper>
         </Grid>
         {
           checked ? (
             <div>
-              <Count label="Total Downloads" number="81" duration="2" classes={classes} />
+              <Count label="Total Downloads" number="0" duration="2" classes={classes} />
             </div>
           ) : (
             <></>
@@ -76,7 +69,7 @@ export default function DownloadApp ({checked, classes}) {
         }
       </Container>
     </div>
-    <Scroll className={classes.main} to="support" smooth={true}>
+    <Scroll className={classes.main} to="thedevs" smooth={true}>
         <IconButton className={classes.scroll_icon_dark}>
             <ExpandMoreOutlinedIcon />
         </IconButton>
