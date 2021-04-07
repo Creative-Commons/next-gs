@@ -16,22 +16,23 @@ export default function Header ({checked, classes}) {
                 collapsedHeight={100}
             >
             <div className={classes.container}>
-                <Grid container spacing={1}>
-                <Grid alignItems="baseline" item>
                 <Typography className={classes.gs_font, classes.teal} variant="h2">
                     Welcome to
+                </Typography>                
+                <Typography className={classes.gs_font} variant="h1">
+                    GS
                 </Typography>
-                </Grid>
-                <Grid alignItems="baseline" item>
-                <Typography className={classes.gs_font} variant="h2">
-                    GS-Suite
-                </Typography>
-                </Grid>
-                <Grid alignItems="baseline" item>
-                <Typography className={classes.gs_font, classes.teal} variant="h2">
-                    .
-                </Typography>
-                </Grid>
+                <Grid container spacing={1}>
+                    <Grid alignItems="baseline" item>
+                        <Typography className={classes.gs_font} variant="h1">
+                            Suite
+                        </Typography>
+                    </Grid>
+                    <Grid alignItems="baseline" item>
+                        <Typography className={classes.gs_font, classes.teal} variant="h1">
+                            .
+                        </Typography>
+                    </Grid>
                 </Grid>
             </div>
             

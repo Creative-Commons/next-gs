@@ -43,11 +43,11 @@ const useStyles = makeStyles((theme) => ({
   },
   scroll_icon_light: {
     color: "#f3f3f3",
-    padding: "5vh",
+    padding: "3vh",
   },
   scroll_icon_dark: {
     color: "#1e1e1e",
-    padding: "5vh",
+    padding: "3vh",
   },
 }));
 
