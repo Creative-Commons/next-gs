@@ -17,20 +17,19 @@ export default function DownloadApp ({checked, classes}) {
     <div className={classes.root} id="downloads">
       <Container>
         <Grid container justify="space-evenly" alignItems="center">
-          <Grid container justify="flex-start" direction="column">
+          <Grid container justify="flex-start" direction="column" xs={6}>
             <Grid item>
               <Typography className={classes.gs_font} variant="h2" >
                 Download the app
               </Typography>
-              </Grid>
-              <Grid item>
+            </Grid>
+            <Grid item>
               <Typography className={classes.gs_font, classes.teal} variant="h2">
                   here...
               </Typography>
             </Grid>
           </Grid>
           <Grid item xs={6}>
-            <TiltWrapper options={{ max: 25 }}>
               <Table className={classes.table} aria-label="simple table">
                 <TableHead className={classes.darkBackground}>
                   <TableRow>
@@ -55,18 +54,17 @@ export default function DownloadApp ({checked, classes}) {
                   ))}
                 </TableBody>
               </Table>
-            </TiltWrapper>
+              {
+                checked ? (
+                  <div>
+                    <Count label="Total Downloads" number="0" duration="2" classes={classes} />
+                  </div>
+                ) : (
+                  <></>
+                )
+              }
           </Grid>
         </Grid>
-        {
-          checked ? (
-            <div>
-              <Count label="Total Downloads" number="0" duration="2" classes={classes} />
-            </div>
-          ) : (
-            <></>
-          )
-        }
       </Container>
     </div>
     <Scroll className={classes.main} to="thedevs" smooth={true}>

@@ -82,6 +82,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontFamily: ["Montserrat"],
     fontSize: 120,
+  },
+  devAvatar: {
+    width: 150,
+    height: 150,
+    alignItems: "center"
   }
 }));
 
@@ -102,17 +107,17 @@ export default function Home (props) {
         <>
           <CssBaseline />
           <NavBar />
-          <Header checked={checked} classes={classes} />
-          <Land1 classes={classes} />
-          <Features1 classes={classes} />
-          <DownloadApp checked={true}  classes={classes}/>
-          <TheDevs classes={classes}/>
-          <Support classes={classes}/>
-          <ScrollToTop {...props}>
+          <div><Header checked={checked} classes={classes} /></div>
+          <div><Land1 classes={classes} /></div>
+          <div><Features1 classes={classes} /></div>
+          <div><DownloadApp checked={true}  classes={classes}/></div>
+          <div><TheDevs classes={classes}/></div>
+          <div><Support classes={classes}/></div>
+          <div><ScrollToTop {...props}>
             <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">
               <ExpandLessOutlinedIcon />
             </Fab>
-          </ScrollToTop>
+          </ScrollToTop></div>
         </>
       </Fade>
     </div>
