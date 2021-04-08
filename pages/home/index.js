@@ -18,6 +18,7 @@ import DownloadApp from "../../components/Landing/Downloads";
 import Support from "../../components/Landing/Support";
 import TheDevs from "../../components/Landing/TheDevs";
 import ScrollToTop from "../../components/ScrollToTop";
+import Copyright from "../../components/Copyright";
 import theme from "../../styles/theme";
 
 
@@ -137,6 +138,7 @@ export default function Home (props) {
           <div><DownloadApp checked={true}  classes={classes}/></div>
           <div className={classes.bg_teal}><TheDevs classes={classes}/></div>
           <div><Support classes={classes}/></div>
+          <div><Copyright classes={classes} /></div>
           <div><ScrollToTop {...props}>
             <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">
               <ExpandLessOutlinedIcon />
