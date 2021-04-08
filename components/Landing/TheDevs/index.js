@@ -15,7 +15,7 @@ export default function TheDevs ({classes}) {
         <Grid container alignItems="center" justify="space-around">
           <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
-              <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
+              <Grid container direction="column" justify="space-around" alignItems="flex-start">
                 <Grid item xs={4}>
                   <Fade in timeout={1000}>
                     <>
@@ -31,7 +31,7 @@ export default function TheDevs ({classes}) {
                 <Grid item>
                   <Fade in timeout={1000}>
                     <div className={classes.container}>
-                      <img className={classes.hoverShadow} height="350"  src="/resources/all_day.webp" />
+                      <img className={classes.hoverShadow} height="280"  src="/resources/all_day.webp" />
                     </div>
                   </Fade>
                 </Grid>
