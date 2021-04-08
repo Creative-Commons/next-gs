@@ -12,6 +12,7 @@ import {
 import NavBar from "../../components/navBar";
 import Header from "../../components/Landing/Header";
 import Land1 from "../../components/Landing/Land1";
+import About from "../../components/Landing/About";
 import Features1 from "../../components/Landing/Features1";
 import DownloadApp from "../../components/Landing/Downloads";
 import Support from "../../components/Landing/Support";
@@ -131,6 +132,7 @@ export default function Home (props) {
           <NavBar />
           <div><Header checked={checked} classes={classes} /></div>
           <div><Land1 classes={classes} /></div>
+          <div><About classes={classes} /></div>
           <div><Features1 classes={classes} /></div>
           <div><DownloadApp checked={true}  classes={classes}/></div>
           <div className={classes.bg_teal}><TheDevs classes={classes}/></div>

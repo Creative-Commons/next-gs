@@ -5,6 +5,7 @@ import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import DevProfile from "../../DevProfile";
 import {TiltWrapper} from "../../Tilting";
+import Rotate from "react-reveal/Rotate";
 
 
 export default function TheDevs ({classes}) {
@@ -40,32 +41,32 @@ export default function TheDevs ({classes}) {
             <Grid item>
             <div className={classes.container}>
             <Grid container spacing={10} padding={5} justify="space-evenly" alignItems="center">     
-              <Grow in timeout={500}>
                 <Grid item>
+                <Rotate>
                   <TiltWrapper>
                     <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
                       profile_pic="https://avatars.githubusercontent.com/u/57360897?v=4" />
                   </TiltWrapper>
+                </Rotate>
                 </Grid>
-                </Grow>
-                <Grow in timeout={1000}>
                 <Grid item>
+                <Rotate>
                   <TiltWrapper>
                     <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
                       profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
                   </TiltWrapper>
+                  </Rotate>
                 </Grid>
-                </Grow>
               </Grid>
               <Grid container spacing={10} justify="space-evenly" alignItems="center">
-              <Grow in timeout={1500}>
                 <Grid item>
+                <Rotate>
                   <TiltWrapper>
                     <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
                       profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
                   </TiltWrapper>
+                  </Rotate>
                 </Grid>
-              </Grow>
               </Grid>
               </div>
             </Grid>

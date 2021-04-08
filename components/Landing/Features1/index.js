@@ -7,7 +7,7 @@ import {
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import {TiltWrapper} from "../../Tilting";
 import { Link as Scroll } from 'react-scroll';
-import Link from "next/link";
+import Slide from "react-reveal/Slide";
 
 
 export default function Features1 ({classes}) {
@@ -18,12 +18,16 @@ export default function Features1 ({classes}) {
       <Container>
       <Grid container spacing={2} alignItems="center" alignContent="center">
             <Grid item xs={6}>
+            <Slide left>
                 <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
                     Teach!
                 </Typography>
+            </Slide>
+            <Slide left>
                 <Typography className={classes.gs_font} variant="h5" >
-                    Create classrooms, enroll students, add video lectures, and much more!
+                    Create classrooms, enroll students, add video lectures....
                 </Typography>
+                </Slide>
             </Grid>
             <Grid item xs={6}>
                 <TiltWrapper options={{ max: 25 }}>
@@ -38,12 +42,16 @@ export default function Features1 ({classes}) {
                 </TiltWrapper>
             </Grid>
             <Grid item xs={6}>
+                <Slide right>
                 <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
                 Learn!
                 </Typography>
+                </Slide>
+                <Slide right>
                 <Typography className={classes.gs_font} variant="h5" >
-                Join classrooms, get access to learning resources, and much more!
+                Join classrooms, get access to learning resources, and much more...!
                 </Typography>
+                </Slide>
             </Grid>
         </Grid>
       </Container>

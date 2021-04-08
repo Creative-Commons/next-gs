@@ -4,11 +4,12 @@ import useWindowPosition from '../../../hook/useWindowPosition';
 import { Container, Grid, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import teal from "@material-ui/core/colors/teal";
 import { Link as Scroll } from 'react-scroll';
-import {TiltWrapper} from "../../Tilting"
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import Link from "next/link";
 import apkData from "./apkData";
 import Count from "../../Count";
+import Pulse from "react-reveal/Pulse";
+import Bounce from "react-reveal/Bounce";
 
 
 export default function DownloadApp ({checked, classes}) {
@@ -20,20 +21,25 @@ export default function DownloadApp ({checked, classes}) {
           <Grid item>
             <Grid container justify="flex-start" direction="column" spacing={2}>
               <Grid item>
+                <Pulse>
                 <Typography className={classes.gs_font} variant="h2" >
                   Download the app
                 </Typography>
+                </Pulse>
               </Grid>
               <Grid item>
+              <Pulse>
                 <Typography className={[classes.teal, classes.hoverBold]} variant="h2">
                     here...
                 </Typography>
+                </Pulse>
               </Grid>
             </Grid>
           </Grid>
           <Grid item>
             <Grid container direction="column" justify="space-evenly" spacing={2}>
             <div className={classes.hoverShadow}>
+              <Bounce cascade>
               <Grid item >
                 <Table className={classes.table} aria-label="simple table">
                   <TableHead className={classes.darkBackground}>
@@ -60,6 +66,7 @@ export default function DownloadApp ({checked, classes}) {
                   </TableBody>
                 </Table>
               </Grid>
+              </Bounce>
               </div>
               {
                 checked ? (

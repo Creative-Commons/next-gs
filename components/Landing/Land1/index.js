@@ -15,7 +15,7 @@ export default function Land1 ({classes}) {
             <Container className={classes.root}>
                 <div></div>
             </Container>
-            <Scroll className={classes.main} to="features1" smooth={true}>
+            <Scroll className={classes.main} to="about" smooth={true}>
                 <IconButton className={classes.scroll_icon_light}>
                     <ExpandMoreOutlinedIcon/>
                 </IconButton>

@@ -9,6 +9,7 @@ import {
 import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import { TiltWrapper } from "../../Tilting";
+import Pulse from "react-reveal/Pulse";
 
 
 export default function Header ({classes}) {
@@ -17,13 +18,14 @@ export default function Header ({classes}) {
         <div className={classes.root} id="header">
             <Container>
                 <Grid container justify="space-evenly" alignItems="center">
-                    <Fade in timeout={700}>
+                    <Fade in timeout={1000}>
                         <Grid item xs={6}>
                             <Grid item>
                                 <Typography className={classes.teal} variant="h2">
                                     Welcome to
                                 </Typography>   
                             </Grid>
+                            <Pulse>
                             <Grid item>
                                 <TiltWrapper options={{ max: 25 }}>
                                     <Typography className={classes.title} variant="h1">
@@ -43,6 +45,7 @@ export default function Header ({classes}) {
                                     </Grid>
                                 </TiltWrapper>
                             </Grid>
+                            </Pulse>
                         </Grid>
                     </Fade>
                     <Fade in timeout={1000}>

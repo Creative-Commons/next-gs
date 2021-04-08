@@ -5,7 +5,8 @@ import { Link as Scroll } from 'react-scroll';
 import ExpandLessOutlinedIcon from "@material-ui/icons/ExpandLessOutlined";
 import { Button} from '@material-ui/core';
 import Link from "next/link";
-import { TiltWrapper } from '../../Tilting';
+import LightSpeed from "react-reveal/LightSpeed";
+import Fade from "react-reveal/Fade"
 
 
 export default function Support ({classes}) {
@@ -15,13 +16,16 @@ export default function Support ({classes}) {
       <Container>
         <Grid container alignItems="center" justify="space-around">
           <Grid item>
+            <LightSpeed left>
             <Typography className={classes.hoverBold} variant="h2">
                 Support...
             </Typography>
+            </LightSpeed>
           </Grid>
           <Grid item>
             <Grid container direction="column" justify="space-around" alignItems="center">
             <Grid item>
+              <Fade>
               <Card>
                 <CardContent>
                   <Typography variant="h4">
@@ -48,6 +52,7 @@ export default function Support ({classes}) {
                   </Grid>
                 </CardContent>
               </Card>
+              </Fade>
             </Grid>
             <Grid item>
               <div className={classes.container}>
