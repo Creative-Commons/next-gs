@@ -26,32 +26,24 @@ export default function Support ({classes}) {
             <Grid container direction="column" justify="space-around" alignItems="center">
             <Grid item>
               <Fade>
-              <Card>
-                <CardContent>
                   <Typography variant="h4">
                     Have any queries?
-                  </Typography>
-                  <Typography variant="h5">
                     We'd love to help you out!
                   </Typography>
-                  </CardContent>
-                  <CardContent>
-                  <Grid container justify="flex-start" alignItems="baseline" spacing={1}>
+                  <Grid container justify="flex-start" alignItems="baseline" spacing={2}>
                     <Grid item>
-                      <Typography variant="h4">
+                      <Typography variant="h5">
                         Write to us at...
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography className={[classes.teal, classes.hoverBold]} variant="h4">
+                      <Typography className={[classes.teal, classes.hoverBold]} variant="h5">
                         <Link href="mailto:gs.test.suite@gmail.com">
                             gs.test.suite@gmail.com
                         </Link>
                       </Typography>
                     </Grid>
                   </Grid>
-                </CardContent>
-              </Card>
               </Fade>
             </Grid>
             <Grid item>

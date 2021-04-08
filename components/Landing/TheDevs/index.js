@@ -40,7 +40,7 @@ export default function TheDevs ({classes}) {
             </Grid>
             <Grid item xs={6}>
             <div className={classes.container}>
-            <Grid container spacing={2} padding={5} justify="center" alignItems="center" >     
+            <Grid container spacing={5} padding={5} justify="center" alignItems="center" >     
                 <Grid item>
                       <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
                         profile_pic="https://avatars.githubusercontent.com/u/57360897?v=4" />
@@ -49,8 +49,6 @@ export default function TheDevs ({classes}) {
                       <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
                         profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
                 </Grid>
-              </Grid>
-              <Grid container spacing={2} justify="center" alignItems="center">
                 <Grid item>
                     <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
                       profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />

@@ -11,7 +11,7 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
             <TiltWrapper>
             <Card>
                 <CardContent>
-                <Grid container direction="column" alignItems="center">
+                <Grid container direction="column" alignItems="center" justify="stretch">
                     <Grid item>
                         <Avatar src={profile_pic} className={classes.devAvatar} />
                     </Grid>
@@ -21,13 +21,11 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <div>
-                            <Typography className={classes.bg_teal} variant="subtitle2">
-                                <Link href={github_link}>
-                                    {github_link}
-                                </Link>
-                            </Typography>
-                        </div>
+                        <Typography className={classes.bg_teal}>
+                            <Link href={github_link}>
+                                {github_link}
+                            </Link>
+                        </Typography>
                     </Grid>
                 </Grid>
                 </CardContent>
