@@ -89,7 +89,27 @@ const useStyles = makeStyles((theme) => ({
     width: 100,
     height: 100,
     alignItems: "center"
-  }
+  },
+  lightText: {
+    color: "#fff"
+  },
+  hoverBold:{
+    fontFamily: ["Montserrat"],
+    transitionDuration: 500,
+    '&:hover': {
+      fontFamily: ["Montserrat"],
+      letterSpacing: 5,
+      fontWeight: "bold",
+      transitionDuration: 500
+    },
+  },
+  hoverShadow:{
+    transitionDuration: 500,
+    '&:hover': {
+      boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+      transitionDuration: 500
+    },
+  },
 }));
 
 

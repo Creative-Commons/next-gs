@@ -18,7 +18,7 @@ export default function Features1 ({classes}) {
       <Container>
       <Grid container spacing={2} alignItems="center" alignContent="center">
             <Grid item xs={6}>
-                <Typography className={classes.gs_font, classes.teal} variant="h3" >
+                <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
                     Teach!
                 </Typography>
                 <Typography className={classes.gs_font} variant="h5" >
@@ -34,11 +34,11 @@ export default function Features1 ({classes}) {
         <Grid container spacing={2} alignItems="center" alignContent="center">
             <Grid item xs={6}>
                 <TiltWrapper options={{ max: 25 }}>
-                    <img height="300vh" src="/resources/features_1_2.jpg"/>
+                    <img height="300vh" src="/resources/codeing.webp"/>
                 </TiltWrapper>
             </Grid>
             <Grid item xs={6}>
-                <Typography className={classes.gs_font, classes.teal} variant="h3" >
+                <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
                 Learn!
                 </Typography>
                 <Typography className={classes.gs_font} variant="h5" >

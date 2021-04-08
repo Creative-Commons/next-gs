@@ -11,9 +11,11 @@ const useStyles = makeStyles(() => ({
     navButtons: {
         color: teal[400],
         fontFamily: ["Montserrat"],
+        transitionDuration: 500,
         '&:hover': {
             boxShadow: 'none',
             color: "#f3f3f3",
+            transitionDuration: 500,
         },
     },
     root: {

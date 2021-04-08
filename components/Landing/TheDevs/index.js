@@ -14,31 +14,33 @@ export default function TheDevs ({classes}) {
       <Container>
         <Grid container alignItems="center" justify="space-around">
           <Grid container justify="space-evenly" alignItems="center">
-            <Grid item direction="column" justify="space-evenly" alignItems="start">
-              <Grid item xs={4}>
-                <Fade in timeout={1000}>
-                  <>
-                <Typography className={classes.gs_font} variant="h2">
-                      Meet the
-                  </Typography>
-                  <Typography className={classes.gs_font} variant="h2">
-                      Devs...!
-                  </Typography>
-                  </>
-                </Fade>
-              </Grid>
-              <Grid item>
-                <Fade in timeout={1000}>
-                  <div className={classes.container}>
-                    <img height="350"  src="/resources/all_day.webp" />
-                  </div>
-                </Fade>
+            <Grid item>
+              <Grid container direction="column" justify="space-evenly" alignItems="flex-start">
+                <Grid item xs={4}>
+                  <Fade in timeout={1000}>
+                    <>
+                  <Typography className={[classes.gs_font]} variant="h2">
+                        Meet the
+                    </Typography>
+                    <Typography className={[classes.gs_font, classes.hoverBold]} variant="h2">
+                        Devs...!
+                    </Typography>
+                    </>
+                  </Fade>
+                </Grid>
+                <Grid item>
+                  <Fade in timeout={1000}>
+                    <div className={classes.container}>
+                      <img height="300"  src="/resources/all_day.webp" />
+                    </div>
+                  </Fade>
+                </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={7}>
+            <Grid item>
             <div className={classes.container}>
             <Grid container spacing={10} padding={5} justify="space-evenly" alignItems="center">     
-              <Grow in timeout={500} direction="left">
+              <Grow in timeout={500}>
                 <Grid item>
                   <TiltWrapper>
                     <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
@@ -46,7 +48,7 @@ export default function TheDevs ({classes}) {
                   </TiltWrapper>
                 </Grid>
                 </Grow>
-                <Grow in timeout={1000} direction="left">
+                <Grow in timeout={1000}>
                 <Grid item>
                   <TiltWrapper>
                     <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
@@ -56,7 +58,7 @@ export default function TheDevs ({classes}) {
                 </Grow>
               </Grid>
               <Grid container spacing={10} justify="space-evenly" alignItems="center">
-              <Grow in timeout={1500} direction="up">
+              <Grow in timeout={1500}>
                 <Grid item>
                   <TiltWrapper>
                     <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
@@ -72,7 +74,7 @@ export default function TheDevs ({classes}) {
       </Container>
     </div>
     <Scroll className={classes.main} to="support" smooth={true}>
-        <IconButton className={classes.scroll_icon_dark}>
+        <IconButton className={classes.scroll_icon_light}>
             <ExpandMoreOutlinedIcon />
         </IconButton>
     </Scroll>

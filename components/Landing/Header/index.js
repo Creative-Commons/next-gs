@@ -11,16 +11,16 @@ import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import { TiltWrapper } from "../../Tilting";
 
 
-export default function Header ({checked, classes}) {
+export default function Header ({classes}) {
     return (
         <>
         <div className={classes.root} id="header">
             <Container>
                 <Grid container justify="space-evenly" alignItems="center">
                     <Fade in timeout={700}>
-                        <Grid container direction="column" xs={6}>
+                        <Grid item xs={6}>
                             <Grid item>
-                                <Typography className={classes.gs_font, classes.teal} variant="h2">
+                                <Typography className={classes.teal} variant="h2">
                                     Welcome to
                                 </Typography>   
                             </Grid>
@@ -36,7 +36,7 @@ export default function Header ({checked, classes}) {
                                             </Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Typography className={classes.title, classes.teal} variant="h1">
+                                            <Typography className={[classes.title, classes.teal]} variant="h1">
                                                 .
                                             </Typography>
                                         </Grid>
@@ -47,7 +47,7 @@ export default function Header ({checked, classes}) {
                     </Fade>
                     <Fade in timeout={1000}>
                         <Grid item>
-                            <img src="/resources/gleam_n_grow.webp" />
+                            <img className={classes.hoverShadow} src="/resources/gleam_n_grow.webp" />
                         </Grid>
                     </Fade>
                 </Grid>

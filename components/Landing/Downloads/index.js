@@ -16,53 +16,61 @@ export default function DownloadApp ({checked, classes}) {
     <>
     <div className={classes.root} id="downloads">
       <Container>
-        <Grid container justify="space-evenly" alignItems="center">
-          <Grid container justify="flex-start" direction="column" xs={6}>
-            <Grid item>
-              <Typography className={classes.gs_font} variant="h2" >
-                Download the app
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.gs_font, classes.teal} variant="h2">
-                  here...
-              </Typography>
+        <Grid container justify="space-evenly" alignItems="center" spacing={2}>
+          <Grid item>
+            <Grid container justify="flex-start" direction="column" spacing={2}>
+              <Grid item>
+                <Typography className={[classes.gs_font]} variant="h2" >
+                  Download the app
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={[classes.teal, classes.hoverBold]} variant="h2">
+                    here...
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={6}>
-              <Table className={classes.table} aria-label="simple table">
-                <TableHead className={classes.darkBackground}>
-                  <TableRow>
-                  <TableCell className={classes.teal} align="center">Device</TableCell>
-                  <TableCell className={classes.teal} align="center">Download Link</TableCell>
-                  <TableCell className={classes.teal} align="center">Hash</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {apkData.map((row) => (
-                    <TableRow key={row.name}>
-                      <TableCell align="center">{row.type}</TableCell>
-                      <TableCell>
-                          <Typography className={classes.teal}>
-                            <Link href={row.link}>
-                              {row.link}
-                            </Link>
-                          </Typography>
-                      </TableCell>
-                      <TableCell>{row.hash}</TableCell>
+          <Grid item>
+            <Grid container direction="column" justify="space-evenly" spacing={2}>
+              <Grid item>
+                <Table className={[classes.table, classes.hoverShadow]} aria-label="simple table">
+                  <TableHead className={classes.darkBackground}>
+                    <TableRow>
+                    <TableCell className={classes.teal} align="center">Device</TableCell>
+                    <TableCell className={classes.teal} align="center">Download Link</TableCell>
+                    <TableCell className={classes.teal} align="center">Hash</TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHead>
+                  <TableBody>
+                    {apkData.map((row, index) => (
+                      <TableRow key={index}>
+                        <TableCell align="center">{row.type}</TableCell>
+                        <TableCell>
+                            <Typography className={classes.teal}>
+                              <Link href={row.link}>
+                                {row.link}
+                              </Link>
+                            </Typography>
+                        </TableCell>
+                        <TableCell>{row.hash}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Grid>
               {
                 checked ? (
-                  <div>
+                  <Grid item xs>
+                  <div className={classes.container}>
                     <Count label="Total Downloads" number="0" duration="2" classes={classes} />
                   </div>
+                  </Grid>
                 ) : (
                   <></>
                 )
               }
+            </Grid>
           </Grid>
         </Grid>
       </Container>

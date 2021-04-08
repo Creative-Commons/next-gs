@@ -14,12 +14,13 @@ export default function Support ({classes}) {
     <div className={classes.root} id="support">
       <Container>
         <Grid container alignItems="center" justify="space-around">
-          <Grid item justify="flex-start">
-            <Typography className={classes.gs_font} variant="h2">
-                Support
+          <Grid item>
+            <Typography className={classes.hoverBold} variant="h2">
+                Support...
             </Typography>
           </Grid>
-          <Grid item direction="column" justify="space-around" alignItems="center" xs={6}>
+          <Grid item>
+            <Grid container direction="column" justify="space-around" alignItems="center">
             <Grid item>
               <Card>
                 <CardContent>
@@ -38,7 +39,7 @@ export default function Support ({classes}) {
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography className={classes.teal} variant="h4">
+                      <Typography className={[classes.teal, classes.hoverBold]} variant="h4">
                         <Link href="mailto:gs.test.suite@gmail.com">
                             gs.test.suite@gmail.com
                         </Link>
@@ -54,6 +55,7 @@ export default function Support ({classes}) {
                   <img height="200" src="/resources/pencil.webp" />
                 </TiltWrapper>
               </div>
+            </Grid>
             </Grid>
           </Grid>
         </Grid>
