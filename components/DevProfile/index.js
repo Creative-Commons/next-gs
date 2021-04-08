@@ -7,24 +7,24 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
         <div>
         <Card>
             <CardContent variant="outlined">
-            <Grid container direction="column" alignItems="center">
+            <Grid container direction="column" justify="space-evenly" alignItems="center">
                 <Grid item>
                     <Avatar src={profile_pic} className={classes.devAvatar} />
                 </Grid>
                 <Grid item>
-                    <Typography variant="h4">
+                    <Typography className={classes.container} variant="h4">
                         {name}
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography className={classes.bg_teal} variant="body1">
+                        <Link href={github_link}>
+                            {github_link}
+                        </Link>
                     </Typography>
                 </Grid>
             </Grid>
             </CardContent>
-            <CardActions>
-                <Typography className={classes.bg_teal} variant="body1">
-                    <Link href={github_link}>
-                        {github_link}
-                    </Link>
-                </Typography>
-            </CardActions>
         </Card>
         </div>
     )

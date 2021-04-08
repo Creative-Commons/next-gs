@@ -86,8 +86,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 120,
   },
   devAvatar: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
     alignItems: "center"
   }
 }));
@@ -113,7 +113,7 @@ export default function Home (props) {
           <div><Land1 classes={classes} /></div>
           <div><Features1 classes={classes} /></div>
           <div><DownloadApp checked={true}  classes={classes}/></div>
-          <div><TheDevs classes={classes}/></div>
+          <div className={classes.bg_teal}><TheDevs classes={classes}/></div>
           <div><Support classes={classes}/></div>
           <div><ScrollToTop {...props}>
             <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">

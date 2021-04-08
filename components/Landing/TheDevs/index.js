@@ -10,7 +10,7 @@ import {TiltWrapper} from "../../Tilting";
 export default function TheDevs ({classes}) {
   return (
     <>
-    <div className={classes.root, classes.bg_teal} id="thedevs">
+    <div className={classes.root} id="thedevs">
       <Container>
         <Grid container alignItems="center" justify="space-around">
           <Grid container justify="space-evenly" alignItems="center">
@@ -30,7 +30,7 @@ export default function TheDevs ({classes}) {
               <Grid item>
                 <Fade in timeout={1000}>
                   <div className={classes.container}>
-                    <img height="400"  src="/resources/all_day.webp" />
+                    <img height="350"  src="/resources/all_day.webp" />
                   </div>
                 </Fade>
               </Grid>
