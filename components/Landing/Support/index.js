@@ -51,9 +51,7 @@ export default function Support ({classes}) {
             </Grid>
             <Grid item>
               <div className={classes.container}>
-                <TiltWrapper>
-                  <img height="200" src="/resources/pencil.webp" />
-                </TiltWrapper>
+                  <img className={classes.hoverShadow} height="350" src="/resources/pencil.webp" />
               </div>
             </Grid>
             </Grid>

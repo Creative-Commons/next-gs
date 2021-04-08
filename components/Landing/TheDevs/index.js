@@ -31,7 +31,7 @@ export default function TheDevs ({classes}) {
                 <Grid item>
                   <Fade in timeout={1000}>
                     <div className={classes.container}>
-                      <img height="350"  src="/resources/all_day.webp" />
+                      <img className={classes.hoverShadow} height="350"  src="/resources/all_day.webp" />
                     </div>
                   </Fade>
                 </Grid>

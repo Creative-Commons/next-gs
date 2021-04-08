@@ -36,7 +36,7 @@ export default function Header ({classes}) {
                                             </Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Typography className={[classes.title, classes.teal]} variant="h1">
+                                            <Typography className={classes.teal} variant="h1">
                                                 .
                                             </Typography>
                                         </Grid>
