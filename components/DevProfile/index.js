@@ -6,7 +6,7 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
     return (
         <div>
         <Card>
-            <CardContent variant="outlined">
+            <CardContent>
             <Grid container direction="column" justify="space-evenly" alignItems="center">
                 <Grid item>
                     <Avatar src={profile_pic} className={classes.devAvatar} />
@@ -16,8 +16,8 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
                         {name}
                     </Typography>
                 </Grid>
-                <Grid item>
-                    <Typography className={classes.bg_teal} variant="body1">
+                <Grid item >
+                    <Typography className={classes.bg_teal} variant="body2">
                         <Link href={github_link}>
                             {github_link}
                         </Link>
