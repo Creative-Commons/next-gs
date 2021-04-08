@@ -57,9 +57,11 @@ const useStyles = makeStyles((theme) => ({
     padding: "4vh",
     backgroundColor: "#1e1e1e",
     color: "#fff",
+    transitionDuration: 500,
     '&:hover': {
       boxShadow: 'none',
-      backgroundColor: teal[400]
+      backgroundColor: teal[400],
+      transitionDuration: 500
     },
   },
   darkBackground: {

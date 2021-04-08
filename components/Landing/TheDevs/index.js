@@ -1,48 +1,71 @@
 import React from 'react';
 import useWindowPosition from '../../../hook/useWindowPosition';
-import { Container, Grid, Typography, IconButton, Slide, Fade} from '@material-ui/core';
+import { Container, Grid, Typography, IconButton, Grow, Fade} from '@material-ui/core';
 import { Link as Scroll } from 'react-scroll';
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import DevProfile from "../../DevProfile";
+import {TiltWrapper} from "../../Tilting";
 
 
 export default function TheDevs ({classes}) {
   return (
     <>
-    <div className={classes.root} id="thedevs">
+    <div className={classes.root, classes.bg_teal} id="thedevs">
       <Container>
-        <Grid container alignItems="center" justify="space-evenly">
+        <Grid container alignItems="center" justify="space-around">
           <Grid container justify="space-evenly" alignItems="center">
-          <Grid item>
-            <Fade in timeout={1000}>
-              <Typography className={classes.gs_font} variant="h2">
-                  Meet the Devs...!
-              </Typography>
-            </Fade>
+            <Grid item direction="column" justify="space-evenly" alignItems="start">
+              <Grid item xs={4}>
+                <Fade in timeout={1000}>
+                  <>
+                <Typography className={classes.gs_font} variant="h2">
+                      Meet the
+                  </Typography>
+                  <Typography className={classes.gs_font} variant="h2">
+                      Devs...!
+                  </Typography>
+                  </>
+                </Fade>
+              </Grid>
+              <Grid item>
+                <Fade in timeout={1000}>
+                  <div className={classes.container}>
+                    <img height="400"  src="/resources/all_day.webp" />
+                  </div>
+                </Fade>
+              </Grid>
             </Grid>
             <Grid item xs={7}>
-            <Grid container spacing={10} padding={5} justify="space-evenly" alignItems="center">                
-            <Slide in timeout={1000} direction="down">
+            <div className={classes.container}>
+            <Grid container spacing={10} padding={5} justify="space-evenly" alignItems="center">     
+              <Grow in timeout={500} direction="left">
                 <Grid item>
-                  <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
-                    profile_pic="https://avatars.githubusercontent.com/u/57360897?v=4" />
+                  <TiltWrapper>
+                    <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
+                      profile_pic="https://avatars.githubusercontent.com/u/57360897?v=4" />
+                  </TiltWrapper>
                 </Grid>
-                </Slide>
-                <Slide in timeout={1000} direction="left">
+                </Grow>
+                <Grow in timeout={1000} direction="left">
                 <Grid item>
-                  <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
-                    profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
+                  <TiltWrapper>
+                    <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
+                      profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
+                  </TiltWrapper>
                 </Grid>
-                </Slide>
+                </Grow>
               </Grid>
               <Grid container spacing={10} justify="space-evenly" alignItems="center">
-              <Slide in timeout={1000} direction="up">
+              <Grow in timeout={1500} direction="up">
                 <Grid item>
-                  <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
-                    profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
+                  <TiltWrapper>
+                    <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
+                      profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
+                  </TiltWrapper>
                 </Grid>
-                </Slide>
+              </Grow>
               </Grid>
+              </div>
             </Grid>
           </Grid>
         </Grid>

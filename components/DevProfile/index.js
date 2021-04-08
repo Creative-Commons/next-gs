@@ -1,4 +1,4 @@
-import { Avatar, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core"
+import { Avatar, Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
 import Link from "next/link";
 
 
@@ -19,7 +19,7 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
             </Grid>
             </CardContent>
             <CardActions>
-                <Typography className={classes.teal} variant="body1">
+                <Typography className={classes.bg_teal} variant="body1">
                     <Link href={github_link}>
                         {github_link}
                     </Link>
