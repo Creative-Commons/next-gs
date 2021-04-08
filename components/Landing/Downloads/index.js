@@ -20,7 +20,7 @@ export default function DownloadApp ({checked, classes}) {
           <Grid item>
             <Grid container justify="flex-start" direction="column" spacing={2}>
               <Grid item>
-                <Typography className={[classes.gs_font]} variant="h2" >
+                <Typography className={classes.gs_font} variant="h2" >
                   Download the app
                 </Typography>
               </Grid>
@@ -33,8 +33,9 @@ export default function DownloadApp ({checked, classes}) {
           </Grid>
           <Grid item>
             <Grid container direction="column" justify="space-evenly" spacing={2}>
-              <Grid item>
-                <Table className={[classes.table, classes.hoverShadow]} aria-label="simple table">
+            <div className={classes.hoverShadow}>
+              <Grid item >
+                <Table className={classes.table} aria-label="simple table">
                   <TableHead className={classes.darkBackground}>
                     <TableRow>
                     <TableCell className={classes.teal} align="center">Device</TableCell>
@@ -59,6 +60,7 @@ export default function DownloadApp ({checked, classes}) {
                   </TableBody>
                 </Table>
               </Grid>
+              </div>
               {
                 checked ? (
                   <Grid item xs>
