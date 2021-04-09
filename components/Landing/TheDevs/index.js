@@ -17,7 +17,7 @@ export default function TheDevs ({classes}) {
           <Grid container justify="space-evenly" alignItems="center">
             <Grid item>
               <Grid container direction="column" justify="space-around" alignItems="flex-start">
-                <Grid item xs={4}>
+                <Grid item>
                   <Fade in timeout={1000}>
                     <>
                   <Typography className={[classes.gs_font]} variant="h2">
@@ -38,7 +38,7 @@ export default function TheDevs ({classes}) {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs>
+            <Grid item>
             <div>
             <Grid container spacing={2} justify="center" alignItems="center" >     
                 <Grid item>
