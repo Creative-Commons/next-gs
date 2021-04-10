@@ -24,34 +24,36 @@ export default function Support ({classes}) {
           </Grid>
           <Grid item>
             <Grid container direction="column" justify="space-around" alignItems="center">
-            <Grid item>
-              <Fade>
-                  <Typography variant="h4">
-                    Have any queries?
-                    We'd love to help you out!
-                  </Typography>
-                  <Grid container justify="flex-start" alignItems="baseline" spacing={2}>
                     <Grid item>
-                      <Typography variant="h5">
+                      <Typography variant="h3">
+                        Have any queries?
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography variant="h4">
+                        We'd love to help you out!!
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography variant="h4">
                         Write to us at...
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography className={[classes.teal, classes.hoverBold]} variant="h5">
-                        <Link href="mailto:gs.test.suite@gmail.com">
-                            gs.test.suite@gmail.com
+                      <Typography className={[classes.teal, classes.hoverBold]} variant="h4">
+                        <Link href="mailto:gssuite.dev@gmail.com">
+                            gssuite.dev@gmail.com
                         </Link>
                       </Typography>
-                    </Grid>
-                  </Grid>
-              </Fade>
-            </Grid>
-            <Grid item>
-              <div className={classes.container}>
-                  <img className={classes.hoverShadow} height="350" src="/resources/pencil.webp" />
-              </div>
-            </Grid>
-            </Grid>
+                      </Grid>
+                <Grid item>
+                  <Fade>
+                    <div className={classes.container}>
+                        <img className={classes.hoverShadow} width="400" src="/resources/pencil.webp" />
+                    </div>
+                  </Fade>
+                </Grid>
+              </Grid>
           </Grid>
         </Grid>
       </Container>

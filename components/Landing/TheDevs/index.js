@@ -14,9 +14,9 @@ export default function TheDevs ({classes}) {
     <div className={classes.root} id="thedevs">
       <Container>
         <Grid container alignItems="center" justify="space-around">
-          <Grid container justify="space-evenly" alignItems="center">
-            <Grid item>
-              <Grid container direction="column" justify="space-around" alignItems="flex-start">
+          <Grid container justify="space-around" alignItems="center">
+            <Grid item xs>
+              <Grid container direction="column" justify="space-around" alignItems="center">
                 <Grid item>
                   <Fade in timeout={1000}>
                     <>
@@ -39,7 +39,6 @@ export default function TheDevs ({classes}) {
               </Grid>
             </Grid>
             <Grid item>
-            <div>
             <Grid container spacing={2} justify="space-around" alignItems="center" spacing={5}>     
                 <Grid item>
                       <DevProfile name="Jaisal Shah" classes={classes} github_link="jaisal1311"
@@ -54,7 +53,6 @@ export default function TheDevs ({classes}) {
                       profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
                 </Grid>
               </Grid>
-              </div>
             </Grid>
           </Grid>
         </Grid>

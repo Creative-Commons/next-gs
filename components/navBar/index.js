@@ -1,4 +1,4 @@
-import { AppBar, Button, Grid, IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Avatar, Button, Grid, IconButton, makeStyles, Toolbar, Typography } from "@material-ui/core";
 import teal from "@material-ui/core/colors/teal";
 import { Link as Scroll } from 'react-scroll';
 import Link from "next/link";
@@ -51,6 +51,7 @@ export default function NavBar () {
         <div>
             <AppBar position="static" className={classes.app_bar}>
                 <Toolbar id="back-to-top-anchor" variant="dense">
+                    <Avatar src="/resources/logo_dark.png" />
                     <Grid container justify="space-evenly" alignItems="center">
                         {
                             linkData.map((item, index) => (

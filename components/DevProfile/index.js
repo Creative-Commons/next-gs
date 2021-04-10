@@ -11,7 +11,7 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
             <TiltWrapper>
             <Card className={classes.hoverShadow}>
                 <CardContent>
-                <Grid container direction="column" alignItems="center" justify="space-around">
+                <Grid className={classes.padding} container direction="column" alignItems="center" justify="space-around">
                     <Grid item>
                         <Avatar src={profile_pic} className={classes.devAvatar} />
                     </Grid>

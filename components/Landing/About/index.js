@@ -11,7 +11,7 @@ export default function About ({classes}) {
         <div className={classes.root} id="about">
             <Container>
                 <Grid container direction="row" justify="space-around">
-                    <Grid item>
+                    <Grid classes={classes.container} item>
                         <Grid container direction="column">
                             <Grid item>
                                 <LightSpeed left>

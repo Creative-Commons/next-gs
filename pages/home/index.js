@@ -121,6 +121,9 @@ const useStyles = makeStyles((theme) => ({
   },
   roundCorners: {
     borderRadius: 10
+  },
+  padding: {
+    padding: 10,
   }
 }));
 
