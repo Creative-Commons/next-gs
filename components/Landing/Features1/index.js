@@ -19,13 +19,13 @@ export default function Features1 ({classes}) {
       <Grid container spacing={2} alignItems="center" alignContent="center">
             <Grid item xs={6}>
             <Slide left>
-                <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
-                    Teach!
+                <Typography className={[classes.teal, classes.hoverBold]} variant="h2" >
+                    Share...
                 </Typography>
             </Slide>
             <Slide left>
                 <Typography className={classes.gs_font} variant="h5" >
-                    Create classrooms, enroll students, add video lectures....
+                    Create classrooms, invite students & add video lectures... share your ideas and help others grow...!
                 </Typography>
                 </Slide>
             </Grid>
@@ -43,13 +43,13 @@ export default function Features1 ({classes}) {
             </Grid>
             <Grid item xs={6}>
                 <Slide right>
-                <Typography className={[classes.teal, classes.hoverBold]} variant="h3" >
-                Learn!
+                <Typography className={[classes.teal, classes.hoverBold]} variant="h2" >
+                Discuss...
                 </Typography>
                 </Slide>
                 <Slide right>
                 <Typography className={classes.gs_font} variant="h5" >
-                Join classrooms, get access to learning resources, and much more...!
+                Communicate with your classmates through a forum... Get access to learning resources and much more...!
                 </Typography>
                 </Slide>
             </Grid>
