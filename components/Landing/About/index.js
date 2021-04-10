@@ -43,7 +43,7 @@ export default function About ({classes}) {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item direction="row">
+                    <Grid item>
                         <Swing>
                         <Grid item>
                             <img className={classes.bg_teal} src="/resources/idea_grow.webp" />
