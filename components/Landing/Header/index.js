@@ -50,7 +50,7 @@ export default function Header ({classes}) {
                     </Fade>
                     <Fade in timeout={1000}>
                         <Grid item>
-                            <img className={classes.hoverShadow} src="/resources/logo_gif.gif" />
+                            <img height="400" className={classes.hoverShadow} src="/resources/plant_grow.gif" />
                         </Grid>
                     </Fade>
                 </Grid>
