@@ -23,7 +23,7 @@ export default function TheDevs ({classes}) {
                   <Typography className={[classes.gs_font]} variant="h2">
                         Meet the
                     </Typography>
-                    <Typography className={[classes.gs_font, classes.hoverBold]} variant="h2">
+                    <Typography className={[classes.gs_font, classes.hoverBold, classes.hoverDark]} variant="h2">
                         Devs...!
                     </Typography>
                     </>
@@ -40,17 +40,17 @@ export default function TheDevs ({classes}) {
             </Grid>
             <Grid item>
             <div>
-            <Grid container spacing={2} justify="center" alignItems="center" >     
+            <Grid container spacing={2} justify="space-around" alignItems="center" spacing={5}>     
                 <Grid item>
-                      <DevProfile name="Jaisal Shah" classes={classes} github_link="https://github.com/jaisal1311"
+                      <DevProfile name="Jaisal Shah" classes={classes} github_link="jaisal1311"
                         profile_pic="https://avatars.githubusercontent.com/u/57360897?v=4" />
                 </Grid>
                 <Grid item>
-                      <DevProfile name="San Sequeira" classes={classes}  github_link="https://github.com/sansqra"
+                      <DevProfile name="San Sequeira" classes={classes}  github_link="sansqra"
                         profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
                 </Grid>
                 <Grid item>
-                    <DevProfile name="Keane Pereira" classes={classes}  github_link="https://github.com/keane3pereira"
+                    <DevProfile name="Keane Pereira" classes={classes}  github_link="keane3pereira"
                       profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
                 </Grid>
               </Grid>

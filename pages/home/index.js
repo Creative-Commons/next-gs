@@ -112,6 +112,16 @@ const useStyles = makeStyles((theme) => ({
       transitionDuration: 500
     },
   },
+  hoverDark: {
+    transitionDuration: 500,
+    '&:hover': {
+      color: "#1e1e1e",
+      transitionDuration: 500
+    },
+  },
+  roundCorners: {
+    borderRadius: 10
+  }
 }));
 
 

@@ -9,9 +9,9 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
         <div>
         <Rotate>
             <TiltWrapper>
-            <Card>
+            <Card className={classes.hoverShadow}>
                 <CardContent>
-                <Grid container direction="column" alignItems="center" justify="stretch">
+                <Grid container direction="column" alignItems="center" justify="space-around">
                     <Grid item>
                         <Avatar src={profile_pic} className={classes.devAvatar} />
                     </Grid>
@@ -21,9 +21,9 @@ export default function DevProfile ({name, profile_pic, github_link, classes}) {
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography className={classes.bg_teal}>
-                            <Link href={github_link}>
-                                {github_link}
+                        <Typography className={[classes.bg_teal, classes.roundCorners, classes.hoverShadow]}>
+                            <Link href={"https://github.com/" + github_link}>
+                                {"@" + github_link}
                             </Link>
                         </Typography>
                     </Grid>
