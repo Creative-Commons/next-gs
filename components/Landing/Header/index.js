@@ -50,7 +50,7 @@ export default function Header ({classes}) {
                     </Fade>
                     <Fade in timeout={1000}>
                         <Grid item>
-                            <img className={classes.hoverShadow} src="/resources/gleam_n_grow.webp" />
+                            <img className={classes.hoverShadow} src="/resources/logo_gif.gif" />
                         </Grid>
                     </Fade>
                 </Grid>
