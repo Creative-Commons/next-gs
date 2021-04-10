@@ -23,11 +23,7 @@ export default function Home() {
   const classes = useStyles();
 
   useEffect(() => {
-    if(localStorage.getItem("token")){
-      router.push("/dashboard");
-    } else {
       router.push("/home");
-    }
   }), []
 
   return (

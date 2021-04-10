@@ -49,6 +49,14 @@ export default function TheDevs ({classes}) {
                         profile_pic="https://avatars.githubusercontent.com/u/42314542?v=4" />
                 </Grid>
                 <Grid item>
+                    <DevProfile name="Rachit Agrawal" classes={classes}  github_link="rachitagarwa"
+                      profile_pic="https://avatars.githubusercontent.com/u/44547447?v=4" />
+                </Grid>
+                <Grid item>
+                    <DevProfile name="Rushik Vadher" classes={classes}  github_link="rushikvadher"
+                      profile_pic="https://avatars.githubusercontent.com/u/44158568?v=4" />
+                </Grid>
+                <Grid item>
                     <DevProfile name="Keane Pereira" classes={classes}  github_link="keane3pereira"
                       profile_pic="https://avatars.githubusercontent.com/u/44158447?v=4" />
                 </Grid>

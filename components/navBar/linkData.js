@@ -9,7 +9,7 @@ export const linkData = [
     },
     {
         "label": "Main Website",
-        "link_to": "https://gs-suite-dev.herokuapp.com"
+        "link_to": "https://gs-suite-main.herokuapp.com/"
     },
     {
         "label": "The Team",
