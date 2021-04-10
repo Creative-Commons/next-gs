@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import useWindowPosition from '../../../hook/useWindowPosition';
 import { Container, Grid, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
@@ -13,6 +13,21 @@ import Bounce from "react-reveal/Bounce";
 
 
 export default function DownloadApp ({checked, classes}) {
+  const [userCount, setUserCount] = useState(0);
+  const [classroomCount, setClassroomCount] = useState(0);
+
+  function getData(){
+    fetch(
+      "https://gs-suite-dev.herokuapp.com/public/get_total_counts/"
+    ).then((response) => (
+      console.log(response)
+    ));
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
     <>
     <div className={classes.root} id="downloads">
