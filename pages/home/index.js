@@ -15,6 +15,7 @@ import Land1 from "../../components/Landing/Land1";
 import About from "../../components/Landing/About";
 import Features1 from "../../components/Landing/Features1";
 import DownloadApp from "../../components/Landing/Downloads";
+import MainWebsite from "../../components/Landing/MainWebsite";
 import Support from "../../components/Landing/Support";
 import TheDevs from "../../components/Landing/TheDevs";
 import ScrollToTop from "../../components/ScrollToTop";
@@ -119,6 +120,13 @@ const useStyles = makeStyles((theme) => ({
       transitionDuration: 500
     },
   },
+  hoverLight: {
+    transitionDuration: 500,
+    '&:hover': {
+      color: "#f2f2f2",
+      transitionDuration: 500
+    },
+  },
   roundCorners: {
     borderRadius: 10
   },
@@ -149,6 +157,7 @@ export default function Home (props) {
           <div><About classes={classes} /></div>
           <div><Features1 classes={classes} /></div>
           <div><DownloadApp checked={true}  classes={classes}/></div>
+          <div><MainWebsite checked={true}  classes={classes}/></div>
           <div className={classes.bg_teal}><TheDevs classes={classes}/></div>
           <div><Support classes={classes}/></div>
           <div><Copyright classes={classes} /></div>
