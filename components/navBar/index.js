@@ -64,9 +64,22 @@ export default function NavBar () {
                                 </Scroll></Grid>
                             ))
                         }
+                        <Grid item><Link href="https://gs-suite-main.herokuapp.com/">
+                            <Button className={classes.navButtons}>
+                                <Typography className={classes.hoverBold}>
+                                    Main Website
+                                </Typography>
+                            </Button>
+                        </Link></Grid>
                     </Grid>
                 </Toolbar>
             </AppBar>
         </div>
     )
 }
+
+
+// {
+//     "label": "Main Website",
+//     "link_to": "https://gs-suite-main.herokuapp.com/"
+// },
