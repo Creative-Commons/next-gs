@@ -151,7 +151,8 @@ export default function ResetPasswordPage () {
                 "token": query.token
             }
         ).then((response) => {
-            console.log(response.data.message);
+            //console.log(response.data.message);
+            setMessage(response.data.message)
         }).catch((error) => setMessage("Failed to reset password"));
     }
 
