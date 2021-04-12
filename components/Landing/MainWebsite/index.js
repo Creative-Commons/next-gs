@@ -50,7 +50,7 @@ export default function DownloadApp ({checked, classes}) {
               </Grid>
               <Grid item>
                 <Pulse>
-                    <Typography className={[classes.hoverBold, classes.teal, classes.hoverLight]} variant="h4" >
+                    <Typography className={[classes.teal, classes.hoverLight]} variant="h4" >
                         <Link href="https://gs-suite-main.herokuapp.com">
                             @ gs-suite-main.herokuapp.com
                         </Link>

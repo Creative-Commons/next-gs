@@ -159,11 +159,11 @@ export default function Home (props) {
           <div className={classes.bg_teal}><TheDevs classes={classes}/></div>
           <div><Support classes={classes}/></div>
           <div><Copyright classes={classes} /></div>
-          <div><ScrollToTop {...props}>
+          <ScrollToTop {...props}>
             <Fab className={classes.bg_teal} size="small" aria-label="scroll back to top">
               <ExpandLessOutlinedIcon />
             </Fab>
-          </ScrollToTop></div>
+          </ScrollToTop>
         </>
       </Fade>
     </div>

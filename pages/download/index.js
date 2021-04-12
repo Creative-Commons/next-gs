@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import useWindowPosition from '../../hook/useWindowPosition';
-import { Container, Grid, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody, AppBar, Toolbar, Avatar, Button } from '@material-ui/core';
+import { Container, Grid, Fade, Typography, IconButton, Table, TableHead, TableRow, TableCell, TableBody, AppBar, Toolbar, Avatar, Button } from '@material-ui/core';
 import teal from "@material-ui/core/colors/teal";
 import Link from "next/link";
 import data from "./apkData.json";
 import Count from "../../components/Count";
 import Pulse from "react-reveal/Pulse";
 import Bounce from "react-reveal/Bounce";
-import NavBar from "../../components/navBar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -147,7 +145,10 @@ export default function DownloadApp () {
 
   function getData(){
     fetch(
-      "https://gs-suite-dev.herokuapp.com/public/get_total_counts/"
+      "https://gs-suite-dev.herokuapp.com/public/get_total_counts/", {},
+      {
+        "headers": {
+      }}
     ).then((response) => (
       console.log(response)
     ));
@@ -182,6 +183,8 @@ export default function DownloadApp () {
             </Toolbar>
         </AppBar>
     </div>
+    
+    <Fade  in={true} timeout={400}>
     <div className={classes.root} id="downloads">
       <Container>
         <Grid container justify="space-evenly" alignItems="center" spacing={2}>
@@ -251,6 +254,7 @@ export default function DownloadApp () {
         </Grid>
       </Container>
     </div>
+    </Fade>
     </>
   );
 }
