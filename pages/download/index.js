@@ -155,7 +155,7 @@ export default function DownloadApp () {
   }
 
   useEffect(() => {
-    getData()
+    //getData()
   }, [])
 
   return (
@@ -186,6 +186,7 @@ export default function DownloadApp () {
     
     <Fade  in={true} timeout={400}>
     <div className={classes.root} id="downloads">
+      <title>Downloads | GS-Suite</title>
       <Container>
         <Grid container justify="space-evenly" alignItems="center" spacing={2}>
           <Grid item>

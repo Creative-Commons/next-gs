@@ -143,10 +143,10 @@ export default function Home (props) {
     setChecked(true);
   }, []);
 
-  <title>Home | GS-Suite</title>
 
   return (
     <div>
+      <title>Home | GS-Suite</title>
       <Fade in={true} timeout={400}>
         <>
           <CssBaseline />
