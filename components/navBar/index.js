@@ -64,6 +64,13 @@ export default function NavBar () {
                                 </Scroll></Grid>
                             ))
                         }
+                        <Grid item><Link href="/download">
+                            <Button className={classes.navButtons}>
+                                <Typography className={classes.hoverBold}>
+                                    Downloads
+                                </Typography>
+                            </Button>
+                        </Link></Grid>
                         <Grid item><Link href="https://gs-suite-main.herokuapp.com/">
                             <Button className={classes.navButtons}>
                                 <Typography className={classes.hoverBold}>

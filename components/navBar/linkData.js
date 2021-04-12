@@ -4,10 +4,6 @@ export const linkData = [
         "link_to": "features1"
     },
     {
-        "label": "Downloads",
-        "link_to": "downloads"
-    },
-    {
         "label": "The Team",
         "link_to": "thedevs"
     },

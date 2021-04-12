@@ -19,18 +19,38 @@ export default function DownloadApp ({checked, classes}) {
     <div className={classes.root} id="main-website">
       <Container className={classes.darkBackground}>
         <Grid container justify="space-evenly" alignItems="center" spacing={2}>
-          <Grid item>
-            <Grid container justify="flex-start" direction="column" spacing={2}>
+        <Grid item>
+            <Grid container justify="flex-start" alignItems="center" direction="row" spacing={2}>
             <Grid item>
                 <Pulse>
-                <Typography className={[classes.gs_font, classes.lightText]} variant="h1" >
+                <Typography className={[classes.gs_font, classes.lightText]} variant="h4" >
+                  Download the app
+                </Typography>
+                </Pulse>
+              </Grid>
+              <Grid item>
+                <Pulse>
+                    <Typography className={[classes.hoverBold, classes.teal, classes.hoverLight]} variant="h1" >
+                        <Link href="/download">
+                            here
+                        </Link>
+                    </Typography>
+                </Pulse>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid container justify="flex-start" alignItems="center" direction="row" spacing={2}>
+            <Grid item>
+                <Pulse>
+                <Typography className={[classes.gs_font, classes.lightText]}  variant="h4" >
                   Or visit the website...
                 </Typography>
                 </Pulse>
               </Grid>
               <Grid item>
                 <Pulse>
-                    <Typography className={[classes.hoverBold, classes.teal, classes.hoverLight]} variant="h2" >
+                    <Typography className={[classes.hoverBold, classes.teal, classes.hoverLight]} variant="h4" >
                         <Link href="https://gs-suite-main.herokuapp.com">
                             @ gs-suite-main.herokuapp.com
                         </Link>
