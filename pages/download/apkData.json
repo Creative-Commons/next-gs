@@ -1,11 +1,6 @@
 {
     "data": [
         {
-            "type": "GS-Suite.apk",
-            "link": "https://drive.google.com/file/d/1tD1rF5Q9qvjHH3XJimsHqi7pGSdPAaPc/view?usp=sharing",
-            "hash": "8B3CECE54380BDD8EF670D63E61183BBC482F340A48C598851B15910FD5F4D61"
-        },
-        {
             "type": "GSSuite-arm64-v8a-release.apk",
             "link": "https://drive.google.com/file/d/1gJ_UlHSqfc3tDpGHFBCf3w3wev-ZrE2n/view?usp=sharing",
             "hash": "90E3301EB6D1D19AA17E591CCFFCC98214DC25CABBA93C001B917FEEA5BD7D8C"
@@ -19,6 +14,11 @@
             "type": "GSSuite-x86_64-release.apk",
             "link": "https://drive.google.com/file/d/14fmjJLluILvRZS886MVgrkrKBSu50W77/view?usp=sharing",
             "hash": "14FB099C345F0E55510CBAFA929FDB9C8057AC07A924EFE0046A7B0750822FD7"
+        },
+        {
+            "type": "GS-Suite.apk",
+            "link": "https://drive.google.com/file/d/1tD1rF5Q9qvjHH3XJimsHqi7pGSdPAaPc/view?usp=sharing",
+            "hash": "8B3CECE54380BDD8EF670D63E61183BBC482F340A48C598851B15910FD5F4D61"
         }
     ]
 }

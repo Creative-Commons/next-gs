@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
   table: {
     border: "2px solid black",
     borderBottom: "2px solid black",
+    borderTop: "2px solid black",
   },
   title: {
     fontFamily: ["Montserrat"],
@@ -208,35 +209,41 @@ export default function DownloadApp () {
             </Grid>
           </Grid>
           <Grid item>
-            <Grid container direction="column" justify="space-evenly" spacing={2}>
             <div className={classes.hoverShadow}>
               <Bounce cascade>
-              <Grid item >
-                <Table className={classes.table} aria-label="simple table">
+                <Table aria-label="simple table">
                   <TableHead className={classes.darkBackground}>
                     <TableRow>
-                    <TableCell className={classes.teal} align="center">Device</TableCell>
-                    <TableCell className={classes.teal} align="center">Download Link</TableCell>
-                    <TableCell className={classes.teal} align="center">Hash</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {data.data.map((row, index) => (
+                      <>
                       <TableRow key={index}>
-                        <TableCell align="center">{row.type}</TableCell>
+                    <TableCell className={classes.teal} style={{fontWeight: "bold"}} align="center">Device</TableCell>
+                        <TableCell align="center"><Typography style={{fontWeight: "bold"}}>{row.type}</Typography></TableCell>
+                      </TableRow>
+                      <TableRow>
+                    <TableCell className={classes.teal}style={{fontWeight: "bold"}} align="center">Download Link</TableCell>
                         <TableCell>
-                            <Typography className={classes.teal}>
-                              <Link href={row.link}>
-                                {row.link}
-                              </Link>
-                            </Typography>
+                                <Typography className={classes.teal}>
+                                  <Link href={row.link}>
+                                    DOWNLOAD
+                                  </Link>
+                                </Typography>
                         </TableCell>
+                      </TableRow>
+
+                      <TableRow>
+                      <TableCell className={classes.teal} style={{fontWeight: "bold"}} align="center">Hash</TableCell>
                         <TableCell>{row.hash}</TableCell>
                       </TableRow>
+                      <TableRow><TableCell></TableCell><TableCell></TableCell><TableCell></TableCell></TableRow>
+                      <TableRow><TableCell></TableCell><TableCell></TableCell><TableCell></TableCell></TableRow>
+                      </>
                     ))}
                   </TableBody>
                 </Table>
-              </Grid>
               </Bounce>
               </div>
               {
@@ -251,7 +258,6 @@ export default function DownloadApp () {
                 )
               }
             </Grid>
-          </Grid>
         </Grid>
       </Container>
     </div>
