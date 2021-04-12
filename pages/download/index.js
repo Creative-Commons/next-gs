@@ -226,11 +226,11 @@ export default function DownloadApp () {
                       <TableRow>
                     <TableCell className={classes.teal}style={{fontWeight: "bold"}} align="center">Download Link</TableCell>
                         <TableCell>
-                                <Typography className={classes.teal}>
+                                <Button className={classes.teal}>
                                   <Link href={row.link}>
                                     DOWNLOAD
                                   </Link>
-                                </Typography>
+                                </Button>
                         </TableCell>
                       </TableRow>
 
