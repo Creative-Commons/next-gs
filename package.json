@@ -20,7 +20,9 @@
     "react-scroll": "^1.8.2",
     "react-tilt": "^0.1.4",
     "styled-components": "^5.2.3",
-    "webpack": "^5.30.0"
+    "webpack": "^5.30.0",
+    "hosted-git-info": ">=2.8.9",
+    "postcss": ">=8.2.10"
   },
   "cacheDirectories": [
     ".next/cache"
